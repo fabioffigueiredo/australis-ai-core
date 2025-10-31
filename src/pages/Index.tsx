@@ -80,32 +80,32 @@ const Index = () => {
       </div>
 
       {/* Navigation Controls */}
-      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-50">
+      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-40">
         <button
           onClick={prevSlide}
           disabled={currentSlide === 0}
-          className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:bg-primary/90 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:bg-primary/90 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           style={{ boxShadow: 'var(--shadow-lg)' }}
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
         
-        <div className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-bold text-lg" style={{ boxShadow: 'var(--shadow-lg)' }}>
+        <div className="bg-primary text-primary-foreground px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-base sm:text-lg" style={{ boxShadow: 'var(--shadow-lg)' }}>
           {currentSlide + 1} / {slides.length}
         </div>
         
         <button
           onClick={nextSlide}
           disabled={currentSlide === slides.length - 1}
-          className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:bg-primary/90 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:bg-primary/90 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           style={{ boxShadow: 'var(--shadow-lg)' }}
         >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
       </div>
 
       {/* Instructions */}
-      <div className="fixed top-8 right-8 bg-muted/90 backdrop-blur-sm px-6 py-3 rounded-lg text-sm text-muted-foreground z-50">
+      <div className="fixed top-4 right-4 sm:top-8 sm:right-8 bg-muted/90 backdrop-blur-sm px-4 py-2 sm:px-6 sm:py-3 rounded-lg text-xs sm:text-sm text-muted-foreground z-40">
         Use ← → ou Espaço para navegar
       </div>
     </div>
