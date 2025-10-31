@@ -28,7 +28,7 @@ export const SlideContainer = ({
           style={{ background: 'var(--gradient-overlay)' }}
         />
       )}
-      <div className="relative z-10 w-full h-full flex flex-col pb-32">
+      <div className="relative z-10 w-full h-full flex flex-col pb-40 md:pb-48">
         {children}
       </div>
     </div>
