@@ -15,7 +15,7 @@ export const Slide04Opportunity = () => {
           <h2 className="text-5xl font-bold text-primary">O Imperativo Global da Computação de IA</h2>
         </div>
         
-        <div className="h-96 mb-8">
+        <div className="h-96 mb-8 min-w-0 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={slideData.marketGrowth}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
@@ -47,7 +47,7 @@ export const Slide04Opportunity = () => {
           </ResponsiveContainer>
         </div>
         
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-accent text-accent-foreground p-6 rounded-lg">
             <div className="text-3xl font-bold mb-2">USD 100B+</div>
             <div className="text-sm">Projeto Stargate (Microsoft/OpenAI)</div>

@@ -165,7 +165,7 @@ export const Slide19Projections = () => (
         <TrendingUp className="w-10 h-10 text-accent" />
         <h2 className="text-5xl font-bold text-primary">Projeções Financeiras (10 Anos)</h2>
       </div>
-      <div className="h-[450px]">
+      <div className="h-[450px] min-w-0 w-full">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={slideData.revenueProjection}>
             <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
