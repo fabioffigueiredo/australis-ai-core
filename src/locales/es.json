@@ -1,0 +1,1029 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "close": "Cerrar",
+    "language": "Idioma",
+    "portuguese": "Português",
+    "spanish": "Español"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "presentation": "Presentación",
+    "slide": "Diapositiva {{number}} de {{total}}",
+    "instructions": "Use ← → o Espacio para navegar"
+  },
+  "slides": {
+    "title": "Proyecto Australis",
+    "subtitle": "Hub de Computación de IA en Tierra del Fuego",
+    "cover": {
+      "subtitle": "Centro de Datos de IA de Hiperescala | Ushuaia, Argentina",
+      "investment": "USD 500 Millones",
+      "opportunity": "Oportunidad de Inversión",
+      "confidential": "Confidencial | Diciembre 2024"
+    },
+    "executive": {
+      "title": "Resumen Ejecutivo",
+      "opportunity": "Oportunidad Única",
+      "location": "Ubicación Estratégica",
+      "advantages": "Ventajas Competitivas",
+      "investment": "Inversión",
+      "returns": "Retornos Proyectados"
+    },
+    "roadmap": {
+      "title": "Hoja de Ruta de Implementación",
+      "phase1": {
+        "title": "Fase 1 - Fundación",
+        "period": "2025-2026",
+        "investment": {
+          "label": "Inversión",
+          "value": "USD 500M"
+        },
+        "capacity": {
+          "label": "Capacidad",
+          "value": "2.6 ExaFLOPS"
+        }
+      },
+      "phase2": {
+        "title": "Fase 2 - Expansión",
+        "period": "2027-2028",
+        "investment": {
+          "label": "Inversión Adicional",
+          "value": "USD 300M"
+        },
+        "expansion": {
+          "label": "Expansión",
+          "value": "40% capacidad"
+        },
+        "energy": {
+          "label": "Energía",
+          "value": "25 MW"
+        }
+      },
+      "phase3": {
+        "title": "Fase 3 - Consolidación",
+        "period": "2029-2030",
+        "investment": {
+          "label": "Inversión Final",
+          "value": "USD 200M"
+        },
+        "technology": {
+          "label": "Tecnología",
+          "value": "GPUs de Próxima Generación"
+        },
+        "total": {
+          "label": "Capacidad Total",
+          "value": "5+ ExaFLOPS"
+        }
+      }
+    },
+    "nextSteps": {
+      "title": "Próximos Pasos",
+      "timeline": "Plazo",
+      "steps": [
+        {
+          "num": "1",
+          "title": "Due Diligence Completa",
+          "description": "Análisis detallado de todos los aspectos técnicos, financieros y regulatorios",
+          "timeline": "30 días"
+        },
+        {
+          "num": "2",
+          "title": "Estructuración Jurídica",
+          "description": "Constitución del SPV y documentación legal completa",
+          "timeline": "45 días"
+        },
+        {
+          "num": "3",
+          "title": "Captación de Recursos",
+          "description": "Cierre del funding con inversores estratégicos",
+          "timeline": "60 días"
+        },
+        {
+          "num": "4",
+          "title": "Inicio de Construcción",
+          "description": "Movilización de equipos e inicio de obras",
+          "timeline": "90 días"
+        }
+      ]
+    },
+    "esg": {
+      "title": "Compromiso ESG",
+      "environmental": {
+        "title": "Ambiental",
+        "items": [
+          {
+            "title": "100% Energía Renovable",
+            "description": "Fuente eólica e hidroeléctrica"
+          },
+          {
+            "title": "PUE < 1.1",
+            "description": "Máxima eficiencia energética"
+          },
+          {
+            "title": "Carbono Neutro",
+            "description": "Operación sostenible"
+          }
+        ]
+      },
+      "social": {
+        "title": "Social",
+        "items": [
+          {
+            "title": "Empleos Locales",
+            "description": "200+ puestos de trabajo"
+          },
+          {
+            "title": "Capacitación Técnica",
+            "description": "Programas de entrenamiento"
+          },
+          {
+            "title": "Desarrollo Regional",
+            "description": "Inversión en la comunidad"
+          }
+        ]
+      },
+      "governance": {
+        "title": "Gobernanza",
+        "items": [
+          {
+            "title": "Transparencia Total",
+            "description": "Informes regulares"
+          },
+          {
+            "title": "Cumplimiento Riguroso",
+            "description": "Estándares internacionales"
+          },
+          {
+            "title": "Auditoría Externa",
+            "description": "Verificación independiente"
+          }
+        ]
+      }
+    },
+    "opportunity": {
+      "title": "El Imperativo Global de la Computación de IA",
+      "chart": {
+        "yAxisLabel": "Miles de Millones USD"
+      },
+      "stats": [
+        {
+          "value": "USD 100B+",
+          "description": "Proyecto Stargate (Microsoft/OpenAI)"
+        },
+        {
+          "value": "40-60%",
+          "description": "Costos de energía en DCs tradicionales"
+        },
+        {
+          "value": "26% CAGR",
+          "description": "Crecimiento mercado IA LATAM"
+        }
+      ]
+    },
+    "thesis": {
+      "title": "¿Por Qué Ushuaia? La Ventaja Dual Única",
+      "climateEfficiency": {
+        "title": "Eficiencia Climática",
+        "items": [
+          {
+            "title": "PUE <1.1",
+            "description": "vs 1.6 promedio global"
+          },
+          {
+            "title": "Free-Air Cooling",
+            "description": "365 días al año"
+          },
+          {
+            "title": "40% Reducción",
+            "description": "Costos operacionales"
+          }
+        ]
+      },
+      "fiscalAdvantage": {
+        "title": "Ventaja Fiscal",
+        "items": [
+          {
+            "title": "Ley 19.640",
+            "description": "Zona Franca Ushuaia"
+          },
+          {
+            "title": "0% Impuestos",
+            "description": "Cero tasas aduaneras"
+          },
+          {
+            "title": "USD 80-120M",
+            "description": "Ahorro en CAPEX"
+          }
+        ]
+      }
+    },
+    "comparison": {
+      "title": "Ventaja Estructural vs. Hubs Latinoamericanos",
+      "table": {
+        "city": "Ciudad",
+        "pue": "PUE",
+        "energy": "Energía (USD/kWh)",
+        "taxes": "Impuestos (%)",
+        "import": "Import. (%)",
+        "risk": "Riesgo"
+      },
+      "risk": {
+        "low": "Bajo",
+        "medium": "Medio"
+      }
+    },
+    "risks": {
+      "title": "Análisis de Riesgos",
+      "table": {
+        "risk": "Riesgo",
+        "mitigation": "Mitigación"
+      },
+      "mitigationCards": [
+        {
+          "title": "Estructura Defensiva",
+          "description": "Múltiples capas de protección"
+        },
+        {
+          "title": "Seguro Integral",
+          "description": "Cobertura política y operacional"
+        },
+        {
+          "title": "Diversificación",
+          "description": "Múltiples mercados y clientes"
+        }
+      ]
+    },
+    "csf": {
+      "title": "Factores Críticos de Éxito",
+      "factors": [
+        [
+          {
+            "title": "Ubicación Estratégica",
+            "description": "Ushuaia ofrece ventajas únicas de clima y regulación"
+          },
+          {
+            "title": "Tecnología de Vanguardia",
+            "description": "GPUs NVIDIA H100 con máxima eficiencia energética"
+          }
+        ],
+        [
+          {
+            "title": "Equipo Experimentado",
+            "description": "Equipo con historial comprobado en centros de datos"
+          },
+          {
+            "title": "Alianzas Estratégicas",
+            "description": "Alianzas con proveedores y clientes clave"
+          }
+        ]
+      ],
+      "status": "Todos los factores críticos están alineados para el éxito del proyecto"
+    },
+    "moat": {
+      "title": "Ventaja Competitiva Defendible",
+      "barriers": [
+        {
+          "title": "Barrera Geográfica",
+          "description": "Ubicación única e irreplicable"
+        },
+        {
+          "title": "Barrera Regulatoria",
+          "description": "Ley 19.640 exclusiva de la región"
+        },
+        {
+          "title": "Barrera de Capital",
+          "description": "Alta inversión inicial necesaria"
+        }
+      ]
+    },
+    "disclaimer": {
+      "title": "Disclaimer Legal",
+      "items": [
+        "Esta presentación contiene información confidencial y prospectiva",
+        "Las proyecciones financieras son estimaciones basadas en premisas razonables",
+        "Los retornos pasados no garantizan resultados futuros",
+        "La inversión en centros de datos involucra riesgos sustanciales",
+        "Consulte la documentación legal completa antes de tomar decisiones de inversión"
+      ]
+    },
+    "location": {
+      "title": "Ubicación Estratégica",
+      "city": "Ushuaia, Argentina",
+      "coordinates": "54°48'S, 68°18'W",
+      "uniquePosition": "Posición Única",
+      "southernmostCity": "Ciudad más austral del mundo",
+      "connectivity": {
+        "title": "Conectividad Regional",
+        "cities": [
+          {
+            "name": "Buenos Aires",
+            "distance": "3.100 km"
+          },
+          {
+            "name": "Santiago",
+            "distance": "2.800 km"
+          },
+          {
+            "name": "São Paulo",
+            "distance": "3.900 km"
+          },
+          {
+            "name": "Miami",
+            "distance": "8.500 km"
+          }
+        ]
+      },
+      "infrastructure": {
+        "title": "Infraestructura de Fibra",
+        "items": [
+          "Cable submarino ARSAT",
+          "Redundancia terrestre",
+          "Conectividad internacional"
+        ]
+      }
+    },
+    "marketDef": {
+      "title": "Enfoque Estratégico: Cargas de Trabajo Asíncronas",
+      "targetMarket": {
+        "title": "Mercado Objetivo",
+        "items": [
+          "Entrenamiento de LLMs",
+          "Investigación de IA",
+          "HPC científico",
+          "Renderizado 3D",
+          "Análisis de big data"
+        ]
+      },
+      "outOfScope": {
+        "title": "Fuera del Alcance",
+        "items": [
+          "Gaming online",
+          "Trading de alta frecuencia",
+          "Videoconferencia",
+          "Streaming en tiempo real",
+          "Apps ultra-baja latencia"
+        ]
+      },
+      "conclusion": {
+        "title": "Costo por FLOP > Latencia",
+        "subtitle": "80% de las cargas de trabajo de IA toleran latencias de 50-100ms"
+      }
+    },
+    "latency": {
+      "title": "Análisis de Latencia",
+      "chart": {
+        "yAxisLabel": "RTT (ms)",
+        "tooltipLabel": "Latencia"
+      },
+      "metrics": [
+        {
+          "value": "<40ms",
+          "description": "Buenos Aires: Excelente",
+          "color": "green"
+        },
+        {
+          "value": "50-75ms",
+          "description": "Santiago/São Paulo: Adecuado",
+          "color": "yellow"
+        },
+        {
+          "value": "80% Apps",
+          "description": "Aceptan <100ms RTT",
+          "color": "blue"
+        }
+      ],
+      "footer": "RTT (Round-Trip Time): Tiempo de ida y vuelta a principales mercados latinoamericanos"
+    },
+    "hardware": {
+      "title": "Especificaciones Técnicas - Hardware",
+      "computation": {
+        "title": "Computación",
+        "items": [
+          {
+            "value": "820",
+            "description": "Servidores HGX H100 8-GPU"
+          },
+          {
+            "value": "6.560",
+            "description": "GPUs NVIDIA H100 80GB"
+          },
+          {
+            "value": "2.6",
+            "description": "ExaFLOPS (FP8)"
+          },
+          {
+            "value": "Arquitectura Hopper",
+            "description": "",
+            "subtitle": "Última generación NVIDIA"
+          }
+        ]
+      },
+      "storage": {
+        "title": "Almacenamiento",
+        "items": [
+          {
+            "value": "50-60 PB",
+            "description": "Capacidad total NVMe"
+          },
+          {
+            "value": "Multi-tier",
+            "description": "Arquitectura jerárquica"
+          },
+          {
+            "value": "",
+            "description": "",
+            "tiers": [
+              "Tier 1: NVMe (hot data)",
+              "Tier 2: SSD (warm data)",
+              "Tier 3: HDD (cold data)"
+            ]
+          }
+        ]
+      },
+      "network": {
+        "title": "Red",
+        "items": [
+          {
+            "value": "400 Gbps",
+            "description": "Fabric Ethernet/InfiniBand"
+          },
+          {
+            "value": "<1µs",
+            "description": "Latencia interna"
+          },
+          {
+            "value": "RDMA habilitado",
+            "description": "",
+            "subtitle": "Remote Direct Memory Access"
+          },
+          {
+            "value": "Topología fat-tree",
+            "description": "",
+            "subtitle": "Máximo ancho de banda entre GPUs"
+          }
+        ]
+      },
+      "performance": "Rendimiento equivalente a 1.640 servidores DGX A100"
+    },
+    "facility": {
+      "title": "Arquitectura de la Instalación",
+      "dimensionsTitle": "Dimensiones",
+      "dimensions": [
+        {
+          "label": "Área Total",
+          "value": "50.000 m²"
+        },
+        {
+          "label": "Data Halls",
+          "value": "4 salas"
+        },
+        {
+          "label": "Racks",
+          "value": "2.000 racks"
+        }
+      ],
+      "specificationsTitle": "Especificaciones",
+      "specifications": [
+        {
+          "icon": "Shield",
+          "title": "Piso elevado",
+          "description": "60cm para cableado"
+        },
+        {
+          "icon": "Shield",
+          "title": "Seguridad Tier III",
+          "description": "Redundancia N+1"
+        },
+        {
+          "icon": "Flame",
+          "title": "Sistema contra incendios",
+          "description": "Supresión por gas inerte"
+        },
+        {
+          "icon": "Monitor",
+          "title": "NOC 24/7",
+          "description": "Monitoreo continuo"
+        }
+      ],
+      "rackDensity": {
+        "title": "Densidad de Rack",
+        "value": "42U",
+        "description": "Por rack (optimizado para GPUs)"
+      }
+    },
+    "cooling": {
+      "title": "Sistemas de Refrigeración",
+      "freeAir": {
+        "title": "Free-Air Cooling",
+        "features": [
+          {
+            "icon": "Wind",
+            "title": "Aire Externo Natural",
+            "description": "Aprovechamiento del clima local"
+          },
+          {
+            "icon": "Thermometer",
+            "title": "Temperatura promedio anual",
+            "description": "18°C ideal para refrigeración"
+          },
+          {
+            "icon": "Zap",
+            "title": "Refrigeración pasiva continua",
+            "description": "8.760 horas/año"
+          },
+          {
+            "icon": "DollarSign",
+            "title": "Costos",
+            "description": "70% vs refrigeración mecánica tradicional"
+          }
+        ]
+      },
+      "liquidCooling": {
+        "title": "Direct Liquid Cooling",
+        "description": "Para GPUs de alta densidad",
+        "features": [
+          {
+            "icon": "Cpu",
+            "title": "Placas cold-plate en contacto directo",
+            "description": "Transferencia térmica optimizada"
+          },
+          {
+            "icon": "Droplets",
+            "title": "Líquido dieléctrico circulante",
+            "description": "Seguridad eléctrica garantizada"
+          },
+          {
+            "icon": "TrendingUp",
+            "title": "Eficiencia",
+            "description": "95% en remoción de calor"
+          }
+        ]
+      },
+      "metrics": [
+        {
+          "value": "1.15",
+          "label": "Meta de eficiencia",
+          "color": "green"
+        },
+        {
+          "value": "50MW",
+          "label": "Capacidad térmica",
+          "color": "blue"
+        }
+      ]
+    },
+    "capex": {
+      "title": "Plan de Inversión - CAPEX",
+      "totalInvestment": "Inversión Total",
+      "totalValue": "USD 500M",
+      "categories": [
+        {
+          "name": "Terrenos",
+          "value": 25,
+          "color": "#8B5CF6"
+        },
+        {
+          "name": "Construcción",
+          "value": 150,
+          "color": "#06B6D4"
+        },
+        {
+          "name": "Hardware",
+          "value": 250,
+          "color": "#10B981"
+        },
+        {
+          "name": "Infraestructura",
+          "value": 50,
+          "color": "#F59E0B"
+        },
+        {
+          "name": "Software",
+          "value": 15,
+          "color": "#EF4444"
+        },
+        {
+          "name": "Otros",
+          "value": 10,
+          "color": "#6B7280"
+        }
+      ]
+    },
+    "timeline": {
+      "title": "Cronograma del Proyecto",
+      "months": "Meses",
+      "summary": [
+        {
+          "value": "36 meses",
+          "label": "Construcción total",
+          "color": "green"
+        },
+        {
+          "value": "Q2 2028",
+          "label": "Lanzamiento operacional",
+          "color": "blue"
+        },
+        {
+          "value": "Fase 1",
+          "label": "2.6 ExaFLOPS",
+          "color": "orange"
+        }
+      ]
+    },
+    "revenue": {
+      "title": "Modelo de Ingresos",
+      "mainProduct": {
+        "title": "Producto Principal",
+        "service": "Alquiler de GPUs",
+        "price": "$2.50",
+        "unit": "por GPU/hora",
+        "basedOnTitle": "Basado en",
+        "basedOn": [
+          {
+            "icon": "📊",
+            "title": "Benchmarks de mercado",
+            "description": "Costo + margen competitivo"
+          },
+          {
+            "icon": "📈",
+            "title": "Demanda creciente de IA",
+            "description": "Precios premium sostenibles"
+          }
+        ]
+      },
+      "utilizationRates": [
+        {
+          "period": "Año 1",
+          "rate": "60%"
+        },
+        {
+          "period": "Año 3",
+          "rate": "75%"
+        },
+        {
+          "period": "Año 5+",
+          "rate": "85%"
+        }
+      ],
+      "secondaryProducts": [
+        {
+          "title": "Inferencia de IA",
+          "description": "APIs para modelos pre-entrenados"
+        },
+        {
+          "title": "Colocation",
+          "description": "Alta densidad para clientes enterprise"
+        },
+        {
+          "title": "Contratos a Largo Plazo",
+          "description": "Descuentos por compromiso anual"
+        }
+      ],
+      "potentialRevenue": {
+        "label": "Ingresos Anuales Potenciales (80% utilización)",
+        "value": "USD 78M",
+        "period": "Año 5 proyectado"
+      }
+    },
+    "market": {
+      "title": "Mercado y Demanda",
+      "growth": {
+        "title": "Crecimiento LATAM",
+        "data": [
+          {
+            "year": "2025",
+            "value": "USD 58B"
+          },
+          {
+            "year": "2030",
+            "value": "USD 154B"
+          }
+        ],
+        "cagr": {
+          "value": "CAGR 26.2%",
+          "label": "Crecimiento anual compuesto"
+        }
+      },
+      "targetClientsTitle": "Clientes Objetivo",
+      "targetClients": [
+        {
+          "emoji": "🔬",
+          "title": "Laboratorios de Investigación",
+          "description": "Globales y regionales"
+        },
+        {
+          "emoji": "🦄",
+          "title": "Unicornios LATAM",
+          "description": "Mercado Libre, Nubank, etc"
+        },
+        {
+          "emoji": "🎓",
+          "title": "Sector Público",
+          "description": "Universidades e institutos"
+        },
+        {
+          "emoji": "🚀",
+          "title": "Startups de IA",
+          "description": "Bien financiadas"
+        }
+      ]
+    },
+    "projections": {
+      "title": "Proyecciones Financieras (10 Años)",
+      "chart": {
+        "xAxisLabel": "Año",
+        "yAxisLabel": "USD Millones",
+        "revenueLine": "Ingresos",
+        "ebitdaLine": "EBITDA"
+      },
+      "highlights": [
+        {
+          "label": "Ingresos Año 1",
+          "value": "USD 28M",
+          "color": "primary"
+        },
+        {
+          "label": "Ingresos Año 5",
+          "value": "USD 118M",
+          "color": "primary"
+        },
+        {
+          "label": "EBITDA Año 5",
+          "value": "USD 66M",
+          "color": "accent"
+        },
+        {
+          "label": "Margen Año 5",
+          "value": "56%",
+          "color": "accent"
+        }
+      ]
+    },
+    "returns": {
+      "title": "Indicadores de Retorno",
+      "indicators": [
+        {
+          "title": "TIR (Tasa Interna de Retorno)",
+          "value": "> 25%",
+          "description": "Retorno altamente atractivo",
+          "color": "green"
+        },
+        {
+          "title": "Período de Recuperación",
+          "value": "< 5",
+          "description": "Años para recuperación",
+          "color": "blue"
+        },
+        {
+          "title": "VPN (10 años)",
+          "value": "Positivo",
+          "description": "Sustancialmente",
+          "color": "orange"
+        }
+      ],
+      "assumptionsTitle": "Supuestos",
+      "assumptions": [
+        {
+          "label": "Tasa de Descuento",
+          "value": "15%"
+        },
+        {
+          "label": "Horizonte de Análisis",
+          "value": "10 años"
+        },
+        {
+          "label": "Utilización Máxima",
+          "value": "90%"
+        },
+        {
+          "label": "Margen EBITDA",
+          "value": "50-60%"
+        }
+      ]
+    },
+    "sensitivity": {
+      "title": "Análisis de Sensibilidad",
+      "table": {
+        "variable": "Variable",
+        "baseScenario": "Escenario Base",
+        "worstScenario": "Peor Escenario",
+        "bestScenario": "Mejor Escenario"
+      },
+      "data": [
+        {
+          "variable": "Precio Energía",
+          "base": "$0.08/kWh",
+          "worst": "$0.12/kWh",
+          "best": "$0.06/kWh"
+        },
+        {
+          "variable": "Precio Alquiler GPU",
+          "base": "$2.50/h",
+          "worst": "$2.00/h",
+          "best": "$3.00/h"
+        },
+        {
+          "variable": "Tasa de Utilización",
+          "base": "80%",
+          "worst": "65%",
+          "best": "90%"
+        },
+        {
+          "variable": "TIR Resultante",
+          "base": "24.5%",
+          "worst": "18.2%",
+          "best": "31.8%"
+        }
+      ],
+      "scenarios": [
+        {
+          "title": "Mejor Escenario",
+          "irr": "TIR 31.8%",
+          "description": "Condiciones favorables de mercado",
+          "color": "green"
+        },
+        {
+          "title": "Peor Escenario",
+          "irr": "TIR 18.2%",
+          "description": "Aún atractivo para inversores",
+          "color": "red"
+        }
+      ],
+      "conclusionTitle": "Conclusión",
+      "conclusion": "Modelo robusto con margen de seguridad significativo. Incluso en escenarios adversos, el retorno permanece atractivo (> 18% TIR)."
+    },
+    "cta": {
+      "title": "Oportunidad Única",
+      "subtitle": "Sé parte de la revolución de IA en América Latina",
+      "highlights": [
+        {
+          "value": ">25%",
+          "description": "TIR Proyectada"
+        },
+        {
+          "value": "USD 500M",
+          "description": "Inversión Total"
+        },
+        {
+          "value": "2025",
+          "description": "Inicio de Operaciones"
+        }
+      ],
+      "callToAction": "¿Construimos el futuro juntos?"
+    }
+  },
+  "slideData": {
+    "disclaimer": [
+      "Esta presentación contiene información confidencial y prospectiva",
+      "Las proyecciones financieras son estimaciones basadas en premisas razonables",
+      "Los retornos pasados no garantizan resultados futuros",
+      "La inversión en centros de datos involucra riesgos sustanciales",
+      "Consulte la documentación legal completa antes de tomar decisiones de inversión"
+    ],
+    "executiveSummary": [
+      {
+        "label": "Inversión Total",
+        "value": "USD 500M",
+        "description": "CAPEX + Contingencia"
+      },
+      {
+        "label": "Capacidad",
+        "value": "2.6 ExaFLOPS",
+        "description": "6.560 GPUs NVIDIA H100"
+      },
+      {
+        "label": "TIR Proyectada",
+        "value": ">25%",
+        "description": "Retorno atractivo"
+      },
+      {
+        "label": "Payback",
+        "value": "<5 años",
+        "description": "Recuperación rápida"
+      }
+    ],
+    "comparison": [
+      {
+        "city": "Ushuaia",
+        "pue": 1.1,
+        "energia": 0.09,
+        "impostos": 0,
+        "importacao": 0,
+        "risco": "Bajo"
+      },
+      {
+        "city": "São Paulo",
+        "pue": 1.6,
+        "energia": 0.18,
+        "impostos": 34,
+        "importacao": 60,
+        "risco": "Medio"
+      },
+      {
+        "city": "Santiago",
+        "pue": 1.4,
+        "energia": 0.15,
+        "impostos": 27,
+        "importacao": 6,
+        "risco": "Bajo"
+      }
+    ],
+    "latency": [
+      {
+        "city": "Buenos Aires",
+        "rtt": 38
+      },
+      {
+        "city": "Santiago",
+        "rtt": 58
+      },
+      {
+        "city": "São Paulo",
+        "rtt": 72
+      },
+      {
+        "city": "Lima",
+        "rtt": 85
+      },
+      {
+        "city": "Miami",
+        "rtt": 140
+      }
+    ],
+    "capexBreakdown": [
+      {
+        "category": "Equipos TI",
+        "value": 325,
+        "percent": 65
+      },
+      {
+        "category": "Construcción",
+        "value": 100,
+        "percent": 20
+      },
+      {
+        "category": "Energía/Refrigeración",
+        "value": 50,
+        "percent": 10
+      },
+      {
+        "category": "Conectividad",
+        "value": 10,
+        "percent": 2
+      },
+      {
+        "category": "Contingencia",
+        "value": 15,
+        "percent": 3
+      }
+    ],
+    "timeline": [
+      {
+        "phase": "Planificación",
+        "start": 0,
+        "duration": 6
+      },
+      {
+        "phase": "Construcción",
+        "start": 6,
+        "duration": 18
+      },
+      {
+        "phase": "Equipos",
+        "start": 18,
+        "duration": 12
+      },
+      {
+        "phase": "Pruebas",
+        "start": 30,
+        "duration": 6
+      },
+      {
+        "phase": "Lanzamiento",
+        "start": 36,
+        "duration": 1
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Inestabilidad económica ARG",
+        "mitigation": "Estructura offshore, facturación en USD"
+      },
+      {
+        "risk": "Riesgo político (CRT-5)",
+        "mitigation": "Seguro de riesgo político, alineación estratégica"
+      },
+      {
+        "risk": "Conectividad",
+        "mitigation": "Enlaces redundantes, SLAs rigurosos"
+      },
+      {
+        "risk": "Riesgo cambiario",
+        "mitigation": "Minimizar conversión ARS, capital de trabajo"
+      }
+    ]
+  }
+}

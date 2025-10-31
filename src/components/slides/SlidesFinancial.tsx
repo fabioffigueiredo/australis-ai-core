@@ -5,226 +5,203 @@ import { SlideFooter } from "../presentation/SlideFooter";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
 import { slideData } from "@/data/slides";
 import { DollarSign, TrendingUp, PieChart, BarChart3 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-export const Slide17Revenue = () => (
+export const Slide17Revenue = () => {
+  const { t } = useTranslation();
+  const utilizationRates = t('slides.revenue.utilizationRates', { returnObjects: true }) as Array<{period: string, rate: string}>;
+  const secondaryProducts = t('slides.revenue.secondaryProducts', { returnObjects: true }) as Array<{title: string, description: string}>;
+  const basedOn = t('slides.revenue.mainProduct.basedOn', { returnObjects: true }) as Array<{icon: string, title: string, description: string}>;
+
+  return (
   <SlideContainer className="bg-background">
-    <SlideHeader slideNumber={17} totalSlides={30} />
-    <div className="flex-1 px-16 pb-16">
-      <div className="flex items-center gap-4 mb-8">
-        <DollarSign className="w-10 h-10 text-accent" />
-        <h2 className="text-5xl font-bold text-primary">Modelo de Receita</h2>
+    <SlideHeader slideNumber={17} totalSlides={29} />
+    <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+      <div className="flex flex-col xs:flex-row items-start xs:items-center gap-2 xs:gap-4 mb-6 xs:mb-8">
+        <DollarSign className="w-6 h-6 xs:w-8 xs:h-8 sm:w-10 sm:h-10 text-accent" />
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary">{t('slides.revenue.title')}</h2>
       </div>
-      <div className="grid grid-cols-2 gap-12">
-        <div className="space-y-6">
-          <div className="bg-accent text-accent-foreground p-10 rounded-lg">
-            <h3 className="text-3xl font-bold mb-6">Produto Principal</h3>
-            <div className="space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 lg:gap-12">
+        <div className="space-y-4 xs:space-y-6">
+          <div className="bg-accent text-accent-foreground slide-card-responsive rounded-lg">
+            <h3 className="text-xl xs:text-2xl sm:text-3xl font-bold mb-4 xs:mb-6">{t('slides.revenue.mainProduct.title')}</h3>
+            <div className="space-y-4 xs:space-y-6">
               <div>
-                <div className="text-sm uppercase tracking-wider opacity-80 mb-2">Aluguel de GPUs</div>
-                <div className="text-5xl font-bold">USD 2.25</div>
-                <div className="text-xl mt-2 opacity-90">por GPU/hora</div>
+                <div className="text-xs xs:text-sm uppercase tracking-wider opacity-80 mb-2">{t('slides.revenue.mainProduct.service')}</div>
+                <div className="text-3xl xs:text-4xl sm:text-5xl font-bold">{t('slides.revenue.mainProduct.price')}</div>
+                <div className="text-lg xs:text-xl mt-2 opacity-90">{t('slides.revenue.mainProduct.unit')}</div>
               </div>
-              <div className="pt-6 border-t border-white/20">
-                <div className="text-lg">Baseado em:</div>
-                <ul className="mt-3 space-y-2 text-sm">
-                  <li>• Benchmarks de mercado</li>
-                  <li>• Custo + margem competitiva</li>
-                  <li>• Demanda crescente IA</li>
+              <div className="pt-4 xs:pt-6 border-t border-white/20">
+                <div className="text-base xs:text-lg">{t('slides.revenue.mainProduct.basedOnTitle')}:</div>
+                <ul className="mt-3 space-y-2 text-xs xs:text-sm">
+                  {basedOn.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="text-base xs:text-lg">{item.icon}</span>
+                      <div>
+                        <div className="font-semibold">{item.title}</div>
+                        <div className="opacity-80">{item.description}</div>
+                      </div>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
-          <div className="bg-card border-2 border-border p-6 rounded-lg">
-            <div className="text-2xl font-bold text-primary mb-2">Taxa de Utilização</div>
-            <div className="space-y-3 mt-4">
-              <div className="flex justify-between">
-                <span>Ano 1</span>
-                <span className="font-bold text-accent">30%</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Ano 3</span>
-                <span className="font-bold text-accent">60%</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Ano 5+</span>
-                <span className="font-bold text-accent">80-90%</span>
-              </div>
+          <div className="bg-card border-2 border-border slide-card-responsive rounded-lg">
+            <div className="text-lg xs:text-xl sm:text-2xl font-bold text-primary mb-2">{t('slides.revenue.utilizationTitle')}</div>
+            <div className="space-y-2 xs:space-y-3 mt-4">
+              {utilizationRates.map((rate, index) => (
+                <div key={index} className="flex justify-between text-sm xs:text-base">
+                  <span>{rate.period}</span>
+                  <span className="font-bold text-accent">{rate.rate}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-        <div className="space-y-6">
-          <div className="bg-card border-2 border-border p-8 rounded-lg">
-            <h4 className="text-2xl font-bold text-primary mb-6">Produtos Secundários</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <span className="text-accent text-xl">✓</span>
-                <div>
-                  <div className="font-bold text-lg">Inferência de IA</div>
-                  <div className="text-sm text-muted-foreground">APIs para modelos pré-treinados</div>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-accent text-xl">✓</span>
-                <div>
-                  <div className="font-bold text-lg">Colocation</div>
-                  <div className="text-sm text-muted-foreground">Alta densidade para clientes enterprise</div>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-accent text-xl">✓</span>
-                <div>
-                  <div className="font-bold text-lg">Contratos Longo Prazo</div>
-                  <div className="text-sm text-muted-foreground">Descontos para compromisso anual</div>
-                </div>
-              </li>
+        <div className="space-y-4 xs:space-y-6">
+          <div className="bg-card border-2 border-border slide-card-responsive rounded-lg">
+            <h4 className="text-lg xs:text-xl sm:text-2xl font-bold text-primary mb-4 xs:mb-6">{t('slides.revenue.secondaryProductsTitle')}</h4>
+            <ul className="space-y-3 xs:space-y-4">
+              {secondaryProducts.map((product, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="text-accent text-lg xs:text-xl">✓</span>
+                  <div>
+                    <div className="font-bold text-base xs:text-lg">{product.title}</div>
+                    <div className="text-xs xs:text-sm text-muted-foreground">{product.description}</div>
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
-          <div className="bg-primary text-primary-foreground p-8 rounded-lg">
-            <div className="text-lg mb-2">Receita Anual Potencial (80% utilização)</div>
-            <div className="text-5xl font-bold">USD 118M</div>
-            <div className="text-sm mt-2 opacity-80">Ano 5 projetado</div>
+          <div className="bg-primary text-primary-foreground slide-card-responsive rounded-lg">
+            <div className="text-base xs:text-lg mb-2">{t('slides.revenue.potentialRevenue.label')}</div>
+            <div className="text-3xl xs:text-4xl sm:text-5xl font-bold">{t('slides.revenue.potentialRevenue.value')}</div>
+            <div className="text-xs xs:text-sm mt-2 opacity-80">{t('slides.revenue.potentialRevenue.period')}</div>
           </div>
         </div>
       </div>
     </div>
     <SlideFooter />
   </SlideContainer>
-);
+  );
+};
 
-export const Slide18Market = () => (
-  <SlideContainer className="bg-background">
-    <SlideHeader slideNumber={18} totalSlides={30} />
-    <div className="flex-1 px-16 pb-16">
-      <h2 className="text-5xl font-bold text-primary mb-12">Mercado e Demanda</h2>
-      <div className="grid grid-cols-2 gap-12">
-        <div>
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 p-10 rounded-lg mb-6">
-            <h3 className="text-3xl font-bold text-blue-900 mb-8">Crescimento LATAM</h3>
-            <div className="space-y-6">
-              <div>
-                <div className="text-sm uppercase tracking-wider text-blue-700 mb-2">2025</div>
-                <div className="text-4xl font-bold text-blue-900">USD 58B</div>
-              </div>
-              <div>
-                <div className="text-sm uppercase tracking-wider text-blue-700 mb-2">2030</div>
-                <div className="text-4xl font-bold text-blue-900">USD 154B</div>
-              </div>
-              <div className="pt-4 border-t border-blue-300">
-                <div className="text-2xl font-bold text-blue-700">CAGR 26.2%</div>
-                <div className="text-sm text-blue-600 mt-1">Crescimento anual composto</div>
+export const Slide18Market = () => {
+  const { t } = useTranslation();
+  const targetClients = t('slides.market.targetClients', { returnObjects: true }) as Array<{emoji: string, title: string, description: string}>;
+  const growthData = t('slides.market.growth', { returnObjects: true }) as {title: string, data: Array<{year: string, value: string}>, cagr: {value: string, label: string}};
+
+  return (
+    <SlideContainer className="bg-background">
+      <SlideHeader slideNumber={18} totalSlides={29} />
+      <div className="flex-1 px-16 pb-16">
+        <h2 className="text-5xl font-bold text-primary mb-12">{t('slides.market.title')}</h2>
+        <div className="grid grid-cols-2 gap-12">
+          <div>
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 p-10 rounded-lg mb-6">
+              <h3 className="text-3xl font-bold text-blue-900 mb-8">{growthData.title}</h3>
+              <div className="space-y-6">
+                {growthData.data.map((item, index) => (
+                  <div key={index}>
+                    <div className="text-sm uppercase tracking-wider text-blue-700 mb-2">{item.year}</div>
+                    <div className="text-4xl font-bold text-blue-900">{item.value}</div>
+                  </div>
+                ))}
+                <div className="pt-4 border-t border-blue-300">
+                  <div className="text-2xl font-bold text-blue-700">{growthData.cagr.value}</div>
+                  <div className="text-sm text-blue-600 mt-1">{growthData.cagr.label}</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="space-y-6">
-          <div className="bg-card border-2 border-border p-8 rounded-lg">
-            <h4 className="text-2xl font-bold text-primary mb-6">Clientes-Alvo</h4>
-            <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 bg-muted rounded-lg">
-                <span className="text-3xl">🔬</span>
-                <div>
-                  <div className="font-bold">Laboratórios de Pesquisa</div>
-                  <div className="text-sm text-muted-foreground">Globais e regionais</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-4 p-4 bg-muted rounded-lg">
-                <span className="text-3xl">🦄</span>
-                <div>
-                  <div className="font-bold">Unicórnios LATAM</div>
-                  <div className="text-sm text-muted-foreground">Mercado Libre, Nubank, etc</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-4 p-4 bg-muted rounded-lg">
-                <span className="text-3xl">🎓</span>
-                <div>
-                  <div className="font-bold">Setor Público</div>
-                  <div className="text-sm text-muted-foreground">Universidades e institutos</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-4 p-4 bg-muted rounded-lg">
-                <span className="text-3xl">🚀</span>
-                <div>
-                  <div className="font-bold">Startups de IA</div>
-                  <div className="text-sm text-muted-foreground">Bem financiadas</div>
-                </div>
+          <div className="space-y-6">
+            <div className="bg-card border-2 border-border p-8 rounded-lg">
+              <h4 className="text-2xl font-bold text-primary mb-6">{t('slides.market.targetClientsTitle')}</h4>
+              <div className="space-y-4">
+                {targetClients.map((client, index) => (
+                  <div key={index} className="flex items-center gap-4 p-4 bg-muted rounded-lg">
+                    <span className="text-3xl">{client.emoji}</span>
+                    <div>
+                      <div className="font-bold">{client.title}</div>
+                      <div className="text-sm text-muted-foreground">{client.description}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <SlideFooter />
-  </SlideContainer>
-);
+      <SlideFooter />
+    </SlideContainer>
+  );
+};
 
-export const Slide19Projections = () => (
-  <SlideContainer className="bg-background">
-    <SlideHeader slideNumber={19} totalSlides={30} />
-    <div className="flex-1 px-16 pb-16">
-      <div className="flex items-center gap-4 mb-8">
-        <TrendingUp className="w-10 h-10 text-accent" />
-        <h2 className="text-5xl font-bold text-primary">Projeções Financeiras (10 Anos)</h2>
-      </div>
-      <div className="h-[450px] min-w-0 w-full">
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={slideData.revenueProjection}>
-            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-            <XAxis 
-              dataKey="year" 
-              stroke="hsl(var(--muted-foreground))"
-              label={{ value: 'Ano', position: 'insideBottom', offset: -5 }}
-            />
-            <YAxis 
-              stroke="hsl(var(--muted-foreground))"
-              label={{ value: 'USD Milhões', angle: -90, position: 'insideLeft' }}
-            />
-            <Tooltip 
-              contentStyle={{ 
-                backgroundColor: 'hsl(var(--card))',
-                border: '1px solid hsl(var(--border))',
-                borderRadius: '8px'
-              }}
-            />
-            <Legend />
-            <Line 
-              type="monotone" 
-              dataKey="receita" 
-              stroke="#1A3B5C" 
-              strokeWidth={3}
-              name="Receita"
-            />
-            <Line 
-              type="monotone" 
-              dataKey="ebitda" 
-              stroke="#FF6B35" 
-              strokeWidth={3}
-              name="EBITDA"
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-      <div className="grid grid-cols-4 gap-6 mt-8">
-        <div className="bg-card border-2 border-border p-6 rounded-lg text-center">
-          <div className="text-sm text-muted-foreground mb-2">Receita Ano 1</div>
-          <div className="text-3xl font-bold text-primary">USD 28M</div>
+export const Slide19Projections = () => {
+  const { t } = useTranslation();
+  const projectionData = t('slides.projections.data', { returnObjects: true }) as Array<{year: number, revenue: string, ebitda: string}>;
+  const highlights = t('slides.projections.highlights', { returnObjects: true }) as Array<{label: string, value: string, color: string}>;
+
+  return (
+    <SlideContainer className="bg-background">
+      <SlideHeader slideNumber={19} totalSlides={29} />
+      <div className="flex-1 px-16 pb-16">
+        <div className="flex items-center gap-4 mb-8">
+          <TrendingUp className="w-10 h-10 text-accent" />
+          <h2 className="text-5xl font-bold text-primary">{t('slides.projections.title')}</h2>
         </div>
-        <div className="bg-card border-2 border-border p-6 rounded-lg text-center">
-          <div className="text-sm text-muted-foreground mb-2">Receita Ano 5</div>
-          <div className="text-3xl font-bold text-primary">USD 118M</div>
+        <div className="h-[450px] min-w-0 w-full">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={slideData.revenueProjection}>
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <XAxis 
+                dataKey="year" 
+                stroke="hsl(var(--muted-foreground))"
+                label={{ value: t('slides.projections.chart.xAxisLabel'), position: 'insideBottom', offset: -5 }}
+              />
+              <YAxis 
+                stroke="hsl(var(--muted-foreground))"
+                label={{ value: t('slides.projections.chart.yAxisLabel'), angle: -90, position: 'insideLeft' }}
+              />
+              <Tooltip 
+                contentStyle={{ 
+                  backgroundColor: 'hsl(var(--card))',
+                  border: '1px solid hsl(var(--border))',
+                  borderRadius: '8px'
+                }}
+              />
+              <Legend />
+              <Line 
+                type="monotone" 
+                dataKey="receita" 
+                stroke="#1A3B5C" 
+                strokeWidth={3}
+                name={t('slides.projections.chart.revenueLine')}
+              />
+              <Line 
+                type="monotone" 
+                dataKey="ebitda" 
+                stroke="#FF6B35" 
+                strokeWidth={3}
+                name={t('slides.projections.chart.ebitdaLine')}
+              />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
-        <div className="bg-card border-2 border-border p-6 rounded-lg text-center">
-          <div className="text-sm text-muted-foreground mb-2">EBITDA Ano 5</div>
-          <div className="text-3xl font-bold text-accent">USD 66M</div>
-        </div>
-        <div className="bg-card border-2 border-border p-6 rounded-lg text-center">
-          <div className="text-sm text-muted-foreground mb-2">Margem Ano 5</div>
-          <div className="text-3xl font-bold text-accent">56%</div>
+        <div className="grid grid-cols-4 gap-6 mt-8">
+          {highlights.map((highlight, index) => (
+            <div key={index} className="bg-card border-2 border-border p-6 rounded-lg text-center">
+              <div className="text-sm text-muted-foreground mb-2">{highlight.label}</div>
+              <div className="text-3xl font-bold text-primary">{highlight.value}</div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
-    <SlideFooter />
-  </SlideContainer>
-);
+      <SlideFooter />
+    </SlideContainer>
+  );
+};
 
 export const Slide20Financials = () => {
   const years = [
@@ -236,7 +213,7 @@ export const Slide20Financials = () => {
 
   return (
     <SlideContainer className="bg-background">
-      <SlideHeader slideNumber={20} totalSlides={30} />
+      <SlideHeader slideNumber={20} totalSlides={29} />
       <div className="flex-1 px-16 pb-16">
         <div className="flex items-center gap-4 mb-12">
           <BarChart3 className="w-10 h-10 text-accent" />
@@ -257,7 +234,7 @@ export const Slide20Financials = () => {
                 <td className="p-6 font-bold text-lg">Receita</td>
                 {years.map((y) => (
                   <td key={y.year} className="p-6 text-center text-xl font-bold text-blue-700">
-                    USD {y.receita}M
+                    USD {y.revenue}M
                   </td>
                 ))}
               </tr>
@@ -289,7 +266,7 @@ export const Slide20Financials = () => {
                 <td className="p-6 font-bold text-xl">Lucro Líquido</td>
                 {years.map((y) => (
                   <td key={y.year} className="p-6 text-center text-2xl font-bold">
-                    USD {y.lucro}M
+                    USD {y.profit}M
                   </td>
                 ))}
               </tr>
@@ -310,132 +287,109 @@ export const Slide20Financials = () => {
   );
 };
 
-export const Slide21Returns = () => (
-  <SlideContainer className="bg-background">
-    <SlideHeader slideNumber={21} totalSlides={30} />
-    <div className="flex-1 px-16 pb-16">
-      <h2 className="text-5xl font-bold text-primary mb-12">Indicadores de Retorno</h2>
-      <div className="grid grid-cols-3 gap-8 mb-12">
-        <div className="bg-gradient-to-br from-green-50 to-green-100 border-4 border-green-300 p-12 rounded-lg text-center">
-          <div className="text-sm uppercase tracking-wider text-green-700 mb-4">TIR (Taxa Interna de Retorno)</div>
-          <div className="text-7xl font-bold text-green-700 mb-4">{'>'} 25%</div>
-          <div className="text-lg text-green-900">Retorno altamente atrativo</div>
-        </div>
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-4 border-blue-300 p-12 rounded-lg text-center">
-          <div className="text-sm uppercase tracking-wider text-blue-700 mb-4">Payback Period</div>
-          <div className="text-7xl font-bold text-blue-700 mb-4">{'<'} 5</div>
-          <div className="text-lg text-blue-900">Anos para recuperação</div>
-        </div>
-        <div className="bg-gradient-to-br from-orange-50 to-orange-100 border-4 border-orange-300 p-12 rounded-lg text-center">
-          <div className="text-sm uppercase tracking-wider text-orange-700 mb-4">VPL (10 anos)</div>
-          <div className="text-6xl font-bold text-orange-700 mb-4">Positivo</div>
-          <div className="text-lg text-orange-900">Substancialmente</div>
-        </div>
-      </div>
-      <div className="bg-card border-2 border-border p-10 rounded-lg">
-        <h3 className="text-2xl font-bold text-primary mb-6">Premissas</h3>
-        <div className="grid grid-cols-2 gap-8">
-          <div className="space-y-4">
-            <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
-              <span className="font-semibold">Taxa de Desconto</span>
-              <span className="text-xl font-bold text-accent">15%</span>
-            </div>
-            <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
-              <span className="font-semibold">Horizonte de Análise</span>
-              <span className="text-xl font-bold text-accent">10 anos</span>
-            </div>
-          </div>
-          <div className="space-y-4">
-            <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
-              <span className="font-semibold">Utilização Máxima</span>
-              <span className="text-xl font-bold text-accent">90%</span>
-            </div>
-            <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
-              <span className="font-semibold">Margem EBITDA</span>
-              <span className="text-xl font-bold text-accent">50-60%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <SlideFooter />
-  </SlideContainer>
-);
+export const Slide21Returns = () => {
+  const { t } = useTranslation();
+  const indicators = t('slides.returns.indicators', { returnObjects: true }) as Array<{title: string, value: string, description: string, color: string}>;
+  const assumptions = t('slides.returns.assumptions', { returnObjects: true }) as Array<{label: string, value: string}>;
 
-export const Slide22Sensitivity = () => (
-  <SlideContainer className="bg-background">
-    <SlideHeader slideNumber={22} totalSlides={30} />
-    <div className="flex-1 px-16 pb-16">
-      <h2 className="text-5xl font-bold text-primary mb-12">Análise de Sensibilidade</h2>
-      <div className="space-y-8">
-        <div className="bg-white rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow-lg)' }}>
-          <table className="w-full">
-            <thead>
-              <tr className="bg-primary text-primary-foreground">
-                <th className="text-left p-6 text-lg font-bold">Variável</th>
-                <th className="text-center p-6 text-lg font-bold">-20%</th>
-                <th className="text-center p-6 text-lg font-bold">Cenário Base</th>
-                <th className="text-center p-6 text-lg font-bold">+20%</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b border-border">
-                <td className="p-6 font-bold">Preço Energia</td>
-                <td className="p-6 text-center bg-green-50">
-                  <div className="font-bold text-green-700">TIR: 28%</div>
-                </td>
-                <td className="p-6 text-center">
-                  <div className="font-bold">TIR: 25%</div>
-                </td>
-                <td className="p-6 text-center bg-yellow-50">
-                  <div className="font-bold text-yellow-700">TIR: 22%</div>
-                </td>
-              </tr>
-              <tr className="border-b border-border">
-                <td className="p-6 font-bold">Preço Aluguel GPU</td>
-                <td className="p-6 text-center bg-red-50">
-                  <div className="font-bold text-red-700">TIR: 18%</div>
-                </td>
-                <td className="p-6 text-center">
-                  <div className="font-bold">TIR: 25%</div>
-                </td>
-                <td className="p-6 text-center bg-green-50">
-                  <div className="font-bold text-green-700">TIR: 32%</div>
-                </td>
-              </tr>
-              <tr className="border-b border-border">
-                <td className="p-6 font-bold">Taxa de Utilização</td>
-                <td className="p-6 text-center bg-yellow-50">
-                  <div className="font-bold text-yellow-700">TIR: 19%</div>
-                </td>
-                <td className="p-6 text-center">
-                  <div className="font-bold">TIR: 25%</div>
-                </td>
-                <td className="p-6 text-center bg-green-50">
-                  <div className="font-bold text-green-700">TIR: 31%</div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+  return (
+    <SlideContainer className="bg-background">
+      <SlideHeader slideNumber={21} totalSlides={29} />
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 xs:mb-8 sm:mb-10 lg:mb-12">{t('slides.returns.title')}</h2>
+        
+        {/* Grid responsivo para indicadores financeiros */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-6 sm:gap-8 mb-8 xs:mb-10 sm:mb-12">
+          {indicators.map((indicator, index) => (
+            <div key={index} className={`bg-gradient-to-br from-${indicator.color}-50 to-${indicator.color}-100 border-4 border-${indicator.color}-300 p-4 xs:p-6 sm:p-8 md:p-10 lg:p-12 rounded-lg text-center`}>
+              <div className={`text-xs xs:text-sm uppercase tracking-wider text-${indicator.color}-700 mb-2 xs:mb-3 sm:mb-4`}>{indicator.title}</div>
+              <div className={`text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-${indicator.color}-700 mb-2 xs:mb-3 sm:mb-4`}>{indicator.value}</div>
+              <div className={`text-sm xs:text-base sm:text-lg text-${indicator.color}-900`}>{indicator.description}</div>
+            </div>
+          ))}
         </div>
-        <div className="grid grid-cols-2 gap-8">
-          <div className="bg-green-50 border-2 border-green-200 p-8 rounded-lg">
-            <h3 className="text-2xl font-bold text-green-900 mb-4">Melhor Cenário</h3>
-            <p className="text-green-700">
-              Preço energia -20%, Aluguel GPU +20%, Utilização +20%
-            </p>
-            <div className="mt-4 text-4xl font-bold text-green-700">TIR: 38%+</div>
-          </div>
-          <div className="bg-blue-50 border-2 border-blue-200 p-8 rounded-lg">
-            <h3 className="text-2xl font-bold text-blue-900 mb-4">Conclusão</h3>
-            <p className="text-blue-700 text-lg">
-              Modelo robusto com margem de segurança significativa. Mesmo em cenários adversos, 
-              retorno permanece atrativo ({'>'} 18% TIR).
-            </p>
+        
+        {/* Seção de premissas responsiva */}
+        <div className="bg-card border-2 border-border p-4 xs:p-6 sm:p-8 md:p-10 rounded-lg">
+          <h3 className="text-lg xs:text-xl sm:text-2xl font-bold text-primary mb-4 xs:mb-6">{t('slides.returns.assumptionsTitle')}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 xs:gap-6 sm:gap-8">
+            <div className="space-y-3 xs:space-y-4">
+              {assumptions.slice(0, 2).map((assumption, index) => (
+                <div key={index} className="flex flex-col xs:flex-row xs:justify-between xs:items-center p-3 xs:p-4 bg-muted rounded-lg gap-1 xs:gap-0">
+                  <span className="font-semibold text-sm xs:text-base">{assumption.label}</span>
+                  <span className="text-lg xs:text-xl font-bold text-accent">{assumption.value}</span>
+                </div>
+              ))}
+            </div>
+            <div className="space-y-3 xs:space-y-4">
+              {assumptions.slice(2, 4).map((assumption, index) => (
+                <div key={index} className="flex flex-col xs:flex-row xs:justify-between xs:items-center p-3 xs:p-4 bg-muted rounded-lg gap-1 xs:gap-0">
+                  <span className="font-semibold text-sm xs:text-base">{assumption.label}</span>
+                  <span className="text-lg xs:text-xl font-bold text-accent">{assumption.value}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <SlideFooter />
-  </SlideContainer>
-);
+      <SlideFooter />
+    </SlideContainer>
+  );
+};
+
+export const Slide22Sensitivity = () => {
+  const { t } = useTranslation();
+  const sensitivityData = t('slides.sensitivity.data', { returnObjects: true }) as Array<{variable: string, base: string, worst: string, best: string}>;
+  const scenarios = t('slides.sensitivity.scenarios', { returnObjects: true }) as Array<{title: string, irr: string, description: string, color: string}>;
+
+  return (
+    <SlideContainer className="bg-background">
+      <SlideHeader slideNumber={22} totalSlides={29} />
+      <div className="flex-1 px-16 pb-16">
+        <h2 className="text-5xl font-bold text-primary mb-12">{t('slides.sensitivity.title')}</h2>
+        <div className="grid grid-cols-2 gap-12">
+          <div className="bg-card border-2 border-border p-8 rounded-lg">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b-2 border-border">
+                    <th className="text-left py-4 text-lg font-bold">{t('slides.sensitivity.table.variable')}</th>
+                    <th className="text-center py-4 text-lg font-bold">{t('slides.sensitivity.table.baseScenario')}</th>
+                    <th className="text-center py-4 text-lg font-bold">{t('slides.sensitivity.table.worstScenario')}</th>
+                    <th className="text-center py-4 text-lg font-bold">{t('slides.sensitivity.table.bestScenario')}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sensitivityData.map((row, index) => (
+                    <tr key={index} className={`border-b border-border ${index === sensitivityData.length - 1 ? 'bg-primary/5' : ''}`}>
+                      <td className={`py-3 ${index === sensitivityData.length - 1 ? 'font-bold' : 'font-medium'}`}>{row.variable}</td>
+                      <td className={`text-center py-3 ${index === sensitivityData.length - 1 ? 'font-bold' : ''}`}>{row.base}</td>
+                      <td className={`text-center py-3 ${index === sensitivityData.length - 1 ? 'font-bold text-red-600' : 'text-red-600'}`}>{row.worst}</td>
+                      <td className={`text-center py-3 ${index === sensitivityData.length - 1 ? 'font-bold text-green-600' : 'text-green-600'}`}>{row.best}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className="space-y-6">
+            {scenarios.map((scenario, index) => (
+              <div key={index} className={`bg-gradient-to-br from-${scenario.color}-50 to-${scenario.color}-100 border-2 border-${scenario.color}-200 p-8 rounded-lg`}>
+                <h3 className={`text-2xl font-bold text-${scenario.color}-900 mb-4`}>{scenario.title}</h3>
+                <div className={`text-4xl font-bold text-${scenario.color}-900 mb-2`}>{scenario.irr}</div>
+                <div className={`text-lg text-${scenario.color}-700`}>{scenario.description}</div>
+              </div>
+            ))}
+            <div className="bg-card border-2 border-border p-6 rounded-lg">
+              <h4 className="text-xl font-bold text-primary mb-4">{t('slides.sensitivity.conclusionTitle')}</h4>
+              <p className="text-muted-foreground leading-relaxed">
+                {t('slides.sensitivity.conclusion')}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <SlideFooter />
+    </SlideContainer>
+  );
+};

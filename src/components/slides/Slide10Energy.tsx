@@ -6,7 +6,7 @@ import { Zap, Wind } from "lucide-react";
 export const Slide10Energy = () => {
   return (
     <SlideContainer className="bg-background">
-      <SlideHeader slideNumber={10} totalSlides={30} />
+      <SlideHeader slideNumber={10} totalSlides={29} />
       <div className="flex-1 px-16 pb-16">
         <div className="flex items-center gap-4 mb-12">
           <Zap className="w-10 h-10 text-accent" />

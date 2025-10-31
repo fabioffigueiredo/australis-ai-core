@@ -1,0 +1,186 @@
+/* Responsive Utilities for Slides */
+
+/* Typography Responsive Classes */
+.text-responsive-xs {
+  @apply text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl;
+}
+
+.text-responsive-sm {
+  @apply text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl;
+}
+
+.text-responsive-base {
+  @apply text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl;
+}
+
+.text-responsive-lg {
+  @apply text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+}
+
+.text-responsive-xl {
+  @apply text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
+}
+
+.text-responsive-2xl {
+  @apply text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+}
+
+.text-responsive-3xl {
+  @apply text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl;
+}
+
+/* Spacing Responsive Classes */
+.spacing-responsive-sm {
+  @apply p-2 xs:p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10;
+}
+
+.spacing-responsive-md {
+  @apply p-4 xs:p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16;
+}
+
+.spacing-responsive-lg {
+  @apply p-6 xs:p-8 sm:p-10 md:p-12 lg:p-16 xl:p-20;
+}
+
+/* Margin Responsive Classes */
+.margin-responsive-sm {
+  @apply m-2 xs:m-3 sm:m-4 md:m-6 lg:m-8 xl:m-10;
+}
+
+.margin-responsive-md {
+  @apply m-4 xs:m-6 sm:m-8 md:m-10 lg:m-12 xl:m-16;
+}
+
+.margin-responsive-lg {
+  @apply m-6 xs:m-8 sm:m-10 md:m-12 lg:m-16 xl:m-20;
+}
+
+/* Gap Responsive Classes */
+.gap-responsive-sm {
+  @apply gap-2 xs:gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10;
+}
+
+.gap-responsive-md {
+  @apply gap-4 xs:gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16;
+}
+
+.gap-responsive-lg {
+  @apply gap-6 xs:gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20;
+}
+
+/* Grid Responsive Classes */
+.grid-responsive-1-2 {
+  @apply grid-cols-1 md:grid-cols-2;
+}
+
+.grid-responsive-1-2-3 {
+  @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+.grid-responsive-1-2-4 {
+  @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-4;
+}
+
+.grid-responsive-2-4 {
+  @apply grid-cols-2 lg:grid-cols-4;
+}
+
+/* Container Responsive Classes */
+.container-responsive {
+  @apply px-4 xs:px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 3xl:px-32;
+}
+
+.container-responsive-sm {
+  @apply px-2 xs:px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12;
+}
+
+/* Slide Specific Responsive Classes */
+.slide-title-responsive {
+  @apply text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold;
+}
+
+.slide-subtitle-responsive {
+  @apply text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+}
+
+.slide-content-responsive {
+  @apply text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl;
+}
+
+.slide-card-responsive {
+  @apply p-4 xs:p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16;
+}
+
+/* Table Responsive Classes */
+.table-responsive {
+  @apply text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl;
+}
+
+.table-cell-responsive {
+  @apply p-2 xs:p-3 sm:p-4 md:p-6 lg:p-8;
+}
+
+/* Button Responsive Classes */
+.button-responsive {
+  @apply px-4 py-2 xs:px-6 xs:py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 lg:px-12 lg:py-6;
+}
+
+/* Image Responsive Classes */
+.image-responsive {
+  @apply w-full h-auto max-w-full;
+}
+
+/* Flex Responsive Classes */
+.flex-responsive-col-row {
+  @apply flex-col md:flex-row;
+}
+
+.flex-responsive-row-col {
+  @apply flex-row md:flex-col;
+}
+
+/* Hide/Show Responsive Classes */
+.hide-mobile {
+  @apply hidden sm:block;
+}
+
+.hide-desktop {
+  @apply block sm:hidden;
+}
+
+.show-tablet-up {
+  @apply hidden md:block;
+}
+
+.show-desktop-up {
+  @apply hidden lg:block;
+}
+
+/* Image optimization utilities */
+.img-responsive {
+  @apply w-full h-auto object-cover;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.img-lazy {
+  @apply transition-opacity duration-300;
+  content-visibility: auto;
+}
+
+.img-priority {
+  @apply img-responsive;
+}
+
+/* Background image optimization */
+.bg-optimized {
+  background-attachment: scroll;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img-lazy,
+  .bg-optimized {
+    @apply transition-none;
+  }
+}
