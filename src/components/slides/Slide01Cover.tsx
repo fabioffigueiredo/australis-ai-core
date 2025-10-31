@@ -22,9 +22,6 @@ export const Slide01Cover = () => {
           </div>
         </div>
       </div>
-      <div className="text-white/70 text-center pb-6 xs:pb-8 sm:pb-10 md:pb-12 text-xs xs:text-sm sm:text-base">
-        {t('slides.cover.confidential')}
-      </div>
     </SlideContainer>
   );
 };
