@@ -86,7 +86,8 @@ const Index = () => {
       <button
         onClick={prevSlide}
         disabled={currentSlide === 0}
-        className="fixed left-4 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary/80 backdrop-blur-sm text-primary-foreground flex items-center justify-center hover:bg-primary/90 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed z-40"
+        className="fixed left-4 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary/80 backdrop-blur-sm text-primary-foreground flex items-center justify-center hover:bg-primary/90 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed z-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary"
+        aria-label={t('navigation.previous') || 'Slide anterior'}
         style={{ boxShadow: 'var(--shadow-lg)' }}
       >
         <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -96,7 +97,8 @@ const Index = () => {
       <button
         onClick={nextSlide}
         disabled={currentSlide === slides.length - 1}
-        className="fixed right-4 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary/80 backdrop-blur-sm text-primary-foreground flex items-center justify-center hover:bg-primary/90 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed z-40"
+        className="fixed right-4 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary/80 backdrop-blur-sm text-primary-foreground flex items-center justify-center hover:bg-primary/90 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed z-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary"
+        aria-label={t('navigation.next') || 'Próximo slide'}
         style={{ boxShadow: 'var(--shadow-lg)' }}
       >
         <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -105,14 +107,23 @@ const Index = () => {
 
 
       {/* Language Selector */}
-      <div className="fixed top-4 right-4 xs:right-6 sm:top-6 sm:right-8 md:top-8 md:right-12 z-50">
+      <div 
+        className="fixed z-50"
+        style={{ 
+          top: 'calc(env(safe-area-inset-top) + 1rem)', 
+          right: 'calc(env(safe-area-inset-right) + 1rem)'
+        }}
+      >
         <LanguageSelector />
       </div>
 
-      {/* Instructions */}
-      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-muted/90 backdrop-blur-sm px-3 py-1.5 xs:px-4 xs:py-2 sm:px-6 sm:py-3 rounded-lg text-xs sm:text-sm text-muted-foreground z-40 max-w-[calc(100vw-8rem)] xs:max-w-[calc(100vw-10rem)] sm:max-w-none">
-        <span className="hidden xs:inline">{t('navigation.instructions')}</span>
-        <span className="xs:hidden">← → Navegar</span>
+      {/* Instructions - moved to bottom center to avoid overlap */}
+      <div 
+        className="pointer-events-none fixed left-1/2 -translate-x-1/2 bg-muted/90 backdrop-blur-sm px-3 py-1.5 xs:px-4 xs:py-2 sm:px-6 sm:py-3 rounded-lg text-muted-foreground z-40 shadow-md max-w-[calc(100vw-8rem)] xs:max-w-[calc(100vw-10rem)] sm:max-w-none"
+        style={{ bottom: 'calc(env(safe-area-inset-bottom) + 1rem)' }}
+      >
+        <span className="hidden xs:inline text-[clamp(10px,1.8vw,14px)]">{t('navigation.instructions')}</span>
+        <span className="xs:hidden text-[clamp(10px,3.5vw,12px)]">← → Navegar</span>
       </div>
     </div>
   );

@@ -187,7 +187,7 @@ export const Slide19Projections = () => {
               <Legend wrapperStyle={{ fontSize: 'clamp(10px, 1.5vw, 14px)' }} />
               <Line 
                 type="monotone" 
-                dataKey="receita" 
+                dataKey="revenue" 
                 stroke="#1A3B5C" 
                 strokeWidth={3}
                 name={t('slides.projections.chart.revenueLine')}
