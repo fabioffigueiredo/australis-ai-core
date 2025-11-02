@@ -17,32 +17,32 @@ export const Slide13Facility = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={13} totalSlides={29} />
-      <div className="flex-1 container-responsive">
-        <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8 sm:mb-10 lg:mb-12">
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <div className="flex flex-col xs:flex-row items-start xs:items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8 sm:mb-10">
           <Building2 className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-accent" />
-          <h2 className="slide-title-responsive text-primary">{t('slides.facility.title')}</h2>
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary">{t('slides.facility.title')}</h2>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 lg:gap-12">
-          <div className="space-y-4 xs:space-y-5 sm:space-y-6">
-            <div className="bg-primary text-primary-foreground slide-card-responsive">
-              <h3 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-bold mb-4 xs:mb-6 sm:mb-8">{t('slides.facility.dimensionsTitle')}</h3>
-              <div className="space-y-4 xs:space-y-5 sm:space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xs:gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+          <div className="space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6">
+            <div className="bg-primary text-primary-foreground p-6 xs:p-8 sm:p-10 rounded-lg">
+              <h3 className="text-xl xs:text-xl sm:text-2xl font-bold mb-4 xs:mb-6">{t('slides.facility.dimensionsTitle')}</h3>
+              <div className="space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6">
                 {dimensions.map((dimension, index) => (
                   <div key={index}>
                     <div className="text-xs xs:text-sm uppercase tracking-wider opacity-80 mb-1 xs:mb-2">{dimension.label}</div>
-                    <div className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold">{dimension.value}</div>
+                    <div className="text-2xl xs:text-3xl sm:text-4xl font-bold">{dimension.value}</div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-          <div className="space-y-4 xs:space-y-5 sm:space-y-6">
-            <div className="bg-card border-2 border-border slide-card-responsive">
-              <h4 className="text-lg xs:text-xl sm:text-2xl font-bold text-primary mb-4 xs:mb-5 sm:mb-6">{t('slides.facility.specificationsTitle')}</h4>
-              <ul className="space-y-3 xs:space-y-4">
+          <div className="space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6">
+            <div className="bg-card border-2 border-border p-4 xs:p-6 sm:p-8 rounded-lg">
+              <h4 className="text-lg xs:text-xl font-bold text-primary mb-3 xs:mb-4 sm:mb-6">{t('slides.facility.specificationsTitle')}</h4>
+              <ul className="space-y-2 xs:space-y-3 sm:space-y-4">
                 {specifications.map((spec, index) => (
                   <li key={index} className="flex items-start gap-2 xs:gap-3">
-                    <span className="text-accent text-lg xs:text-xl">✓</span>
+                    <span className="text-accent text-base xs:text-lg sm:text-xl">✓</span>
                     <div>
                       <div className="font-bold text-sm xs:text-base">{spec.title}</div>
                       <div className="text-xs xs:text-sm text-muted-foreground">{spec.description}</div>
@@ -51,10 +51,10 @@ export const Slide13Facility = () => {
                 ))}
               </ul>
             </div>
-            <div className="bg-accent text-accent-foreground p-6 rounded-lg">
-              <div className="text-2xl font-bold mb-2">{t('slides.facility.rackDensity.title')}</div>
-              <div className="text-4xl font-bold">{t('slides.facility.rackDensity.value')}</div>
-              <div className="text-sm opacity-90 mt-2">{t('slides.facility.rackDensity.description')}</div>
+            <div className="bg-accent text-accent-foreground p-4 xs:p-5 sm:p-6 rounded-lg">
+              <div className="text-lg xs:text-xl sm:text-2xl font-bold mb-1 xs:mb-2">{t('slides.facility.rackDensity.title')}</div>
+              <div className="text-3xl xs:text-3xl sm:text-4xl font-bold">{t('slides.facility.rackDensity.value')}</div>
+              <div className="text-xs xs:text-sm opacity-90 mt-1 xs:mt-2">{t('slides.facility.rackDensity.description')}</div>
             </div>
           </div>
         </div>
@@ -161,7 +161,7 @@ export const Slide15Capex = () => {
           <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary">{t('slides.capex.title')}</h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 lg:gap-12 items-center">
-          <div className="h-[300px] xs:h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] min-w-0 w-full">
+          <div className="h-[200px] xs:h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] min-w-0 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
@@ -170,7 +170,7 @@ export const Slide15Capex = () => {
                   cy="50%"
                   labelLine={false}
                   label={(entry) => `${entry.percent}%`}
-                  outerRadius={180}
+                  outerRadius="80%"
                   fill="#8884d8"
                   dataKey="value"
                 >
@@ -178,7 +178,7 @@ export const Slide15Capex = () => {
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
-                <Legend />
+                <Legend wrapperStyle={{ fontSize: 'clamp(10px, 1.5vw, 14px)' }} />
               </PieChart>
             </ResponsiveContainer>
           </div>

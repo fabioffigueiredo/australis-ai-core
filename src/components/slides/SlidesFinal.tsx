@@ -10,12 +10,12 @@ import { useTranslation } from "react-i18next";
 export const Slide23Risks = () => (
   <SlideContainer className="bg-background">
     <SlideHeader slideNumber={23} totalSlides={29} />
-    <div className="flex-1 container-responsive">
-      <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8 sm:mb-10 lg:mb-12">
-        <AlertTriangle className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-red-500" />
-        <h2 className="slide-title-responsive text-primary">Análise de Riscos</h2>
-      </div>
-      <div className="bg-card border border-border rounded-lg overflow-hidden mb-6 xs:mb-8">
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <div className="flex flex-col xs:flex-row items-start xs:items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8 sm:mb-10">
+          <AlertTriangle className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-red-500" />
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary">Análise de Riscos</h2>
+        </div>
+        <div className="bg-card border border-border rounded-lg overflow-hidden mb-6 xs:mb-8">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[600px]">
             <thead className="bg-muted">

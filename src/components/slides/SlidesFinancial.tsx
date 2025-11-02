@@ -151,27 +151,40 @@ export const Slide19Projections = () => {
           <TrendingUp className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-accent" />
           <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary">{t('slides.projections.title')}</h2>
         </div>
-        <div className="h-[300px] xs:h-[350px] sm:h-[400px] md:h-[450px] min-w-0 w-full">
+        <div className="h-[200px] xs:h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] min-w-0 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={slideData.revenueProjection}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
               <XAxis 
                 dataKey="year" 
                 stroke="hsl(var(--muted-foreground))"
-                label={{ value: t('slides.projections.chart.xAxisLabel'), position: 'insideBottom', offset: -5 }}
+                style={{ fontSize: 'clamp(10px, 2vw, 14px)' }}
+                label={{ 
+                  value: t('slides.projections.chart.xAxisLabel'), 
+                  position: 'insideBottom', 
+                  offset: -5,
+                  style: { fontSize: 'clamp(10px, 1.5vw, 14px)' }
+                }}
               />
               <YAxis 
                 stroke="hsl(var(--muted-foreground))"
-                label={{ value: t('slides.projections.chart.yAxisLabel'), angle: -90, position: 'insideLeft' }}
+                style={{ fontSize: 'clamp(10px, 1.5vw, 14px)' }}
+                label={{ 
+                  value: t('slides.projections.chart.yAxisLabel'), 
+                  angle: -90, 
+                  position: 'insideLeft',
+                  style: { fontSize: 'clamp(10px, 1.5vw, 14px)' }
+                }}
               />
               <Tooltip 
                 contentStyle={{ 
                   backgroundColor: 'hsl(var(--card))',
                   border: '1px solid hsl(var(--border))',
-                  borderRadius: '8px'
+                  borderRadius: '8px',
+                  fontSize: 'clamp(12px, 2vw, 16px)'
                 }}
               />
-              <Legend />
+              <Legend wrapperStyle={{ fontSize: 'clamp(10px, 1.5vw, 14px)' }} />
               <Line 
                 type="monotone" 
                 dataKey="receita" 
