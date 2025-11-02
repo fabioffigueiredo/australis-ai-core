@@ -70,23 +70,23 @@ export const Slide24CSF = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={24} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16">
-        <div className="flex items-center gap-4 mb-12">
-          <Target className="w-10 h-10 text-accent" />
-          <h2 className="text-5xl font-bold text-primary">{t('slides.csf.title')}</h2>
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8 sm:mb-10 md:mb-12">
+          <Target className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-accent" />
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary">{t('slides.csf.title')}</h2>
         </div>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xs:gap-6 sm:gap-8">
         {(t('slides.csf.factors', { returnObjects: true }) as any[][]).map((column, columnIndex) => (
-          <div key={columnIndex} className="space-y-6">
+          <div key={columnIndex} className="space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6">
             {column.map((factor, index) => (
-              <div key={index} className="bg-green-50 border-4 border-green-300 p-8 rounded-lg">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+              <div key={index} className="bg-green-50 border-2 xs:border-3 sm:border-4 border-green-300 p-4 xs:p-6 sm:p-8 rounded-lg">
+                <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 mb-2 xs:mb-3 sm:mb-4">
+                  <div className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-lg xs:text-xl sm:text-2xl font-bold">
                     ✓
                   </div>
-                  <h3 className="text-2xl font-bold text-green-900">{factor.title}</h3>
+                  <h3 className="text-lg xs:text-xl sm:text-2xl font-bold text-green-900">{factor.title}</h3>
                 </div>
-                <p className="text-green-700">
+                <p className="text-sm xs:text-base text-green-700">
                   {factor.description}
                 </p>
               </div>
@@ -94,8 +94,8 @@ export const Slide24CSF = () => {
           </div>
         ))}
       </div>
-      <div className="mt-12 bg-accent text-accent-foreground p-8 rounded-lg text-center">
-        <p className="text-2xl font-bold">
+      <div className="mt-6 xs:mt-8 sm:mt-10 md:mt-12 bg-accent text-accent-foreground p-4 xs:p-6 sm:p-8 rounded-lg text-center">
+        <p className="text-lg xs:text-xl sm:text-2xl font-bold">
           {t('slides.csf.status')}
         </p>
       </div>
@@ -197,67 +197,67 @@ export const Slide26Roadmap = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={26} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16">
-        <div className="flex items-center gap-4 mb-12">
-          <Rocket className="w-10 h-10 text-accent" />
-          <h2 className="text-5xl font-bold text-primary">{t('slides.roadmap.title')}</h2>
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8 sm:mb-10 md:mb-12">
+          <Rocket className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-accent" />
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary">{t('slides.roadmap.title')}</h2>
         </div>
-      <div className="space-y-8">
-        <div className="bg-primary text-primary-foreground p-12 rounded-lg">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-4xl font-bold">{t('slides.roadmap.phase1.title')}</h3>
-            <div className="text-3xl font-bold">{t('slides.roadmap.phase1.period')}</div>
+      <div className="space-y-4 xs:space-y-6 sm:space-y-8">
+        <div className="bg-primary text-primary-foreground p-6 xs:p-8 sm:p-10 md:p-12 rounded-lg">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between mb-4 xs:mb-5 sm:mb-6 gap-2">
+            <h3 className="text-2xl xs:text-3xl sm:text-4xl font-bold">{t('slides.roadmap.phase1.title')}</h3>
+            <div className="text-xl xs:text-2xl sm:text-3xl font-bold">{t('slides.roadmap.phase1.period')}</div>
           </div>
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 xs:gap-6 sm:gap-8">
             <div>
-              <div className="text-sm uppercase tracking-wider opacity-80 mb-2">{t('slides.roadmap.phase1.investment.label')}</div>
-              <div className="text-4xl font-bold">{t('slides.roadmap.phase1.investment.value')}</div>
+              <div className="text-xs xs:text-sm uppercase tracking-wider opacity-80 mb-1 xs:mb-2">{t('slides.roadmap.phase1.investment.label')}</div>
+              <div className="text-2xl xs:text-3xl sm:text-4xl font-bold">{t('slides.roadmap.phase1.investment.value')}</div>
             </div>
             <div>
-              <div className="text-sm uppercase tracking-wider opacity-80 mb-2">{t('slides.roadmap.phase1.capacity.label')}</div>
-              <div className="text-4xl font-bold">{t('slides.roadmap.phase1.capacity.value')}</div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="bg-accent text-accent-foreground p-12 rounded-lg">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-4xl font-bold">{t('slides.roadmap.phase2.title')}</h3>
-            <div className="text-3xl font-bold">{t('slides.roadmap.phase2.period')}</div>
-          </div>
-          <div className="grid grid-cols-3 gap-8">
-            <div>
-              <div className="text-sm uppercase tracking-wider opacity-80 mb-2">{t('slides.roadmap.phase2.investment.label')}</div>
-              <div className="text-4xl font-bold">{t('slides.roadmap.phase2.investment.value')}</div>
-            </div>
-            <div>
-              <div className="text-sm uppercase tracking-wider opacity-80 mb-2">{t('slides.roadmap.phase2.expansion.label')}</div>
-              <div className="text-4xl font-bold">{t('slides.roadmap.phase2.expansion.value')}</div>
-            </div>
-            <div>
-              <div className="text-sm uppercase tracking-wider opacity-80 mb-2">{t('slides.roadmap.phase2.energy.label')}</div>
-              <div className="text-4xl font-bold">{t('slides.roadmap.phase2.energy.value')}</div>
+              <div className="text-xs xs:text-sm uppercase tracking-wider opacity-80 mb-1 xs:mb-2">{t('slides.roadmap.phase1.capacity.label')}</div>
+              <div className="text-2xl xs:text-3xl sm:text-4xl font-bold">{t('slides.roadmap.phase1.capacity.value')}</div>
             </div>
           </div>
         </div>
         
-        <div className="bg-card border-2 border-border p-12 rounded-lg">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-4xl font-bold text-primary">{t('slides.roadmap.phase3.title')}</h3>
-            <div className="text-3xl font-bold text-primary">{t('slides.roadmap.phase3.period')}</div>
+        <div className="bg-accent text-accent-foreground p-6 xs:p-8 sm:p-10 md:p-12 rounded-lg">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between mb-4 xs:mb-5 sm:mb-6 gap-2">
+            <h3 className="text-2xl xs:text-3xl sm:text-4xl font-bold">{t('slides.roadmap.phase2.title')}</h3>
+            <div className="text-xl xs:text-2xl sm:text-3xl font-bold">{t('slides.roadmap.phase2.period')}</div>
           </div>
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-6 sm:gap-8">
             <div>
-              <div className="text-sm uppercase tracking-wider text-muted-foreground mb-2">{t('slides.roadmap.phase3.investment.label')}</div>
-              <div className="text-4xl font-bold text-primary">{t('slides.roadmap.phase3.investment.value')}</div>
+              <div className="text-xs xs:text-sm uppercase tracking-wider opacity-80 mb-1 xs:mb-2">{t('slides.roadmap.phase2.investment.label')}</div>
+              <div className="text-2xl xs:text-3xl sm:text-4xl font-bold">{t('slides.roadmap.phase2.investment.value')}</div>
             </div>
             <div>
-              <div className="text-sm uppercase tracking-wider text-muted-foreground mb-2">{t('slides.roadmap.phase3.technology.label')}</div>
-              <div className="text-4xl font-bold text-primary">{t('slides.roadmap.phase3.technology.value')}</div>
+              <div className="text-xs xs:text-sm uppercase tracking-wider opacity-80 mb-1 xs:mb-2">{t('slides.roadmap.phase2.expansion.label')}</div>
+              <div className="text-2xl xs:text-3xl sm:text-4xl font-bold">{t('slides.roadmap.phase2.expansion.value')}</div>
             </div>
             <div>
-              <div className="text-sm uppercase tracking-wider text-muted-foreground mb-2">{t('slides.roadmap.phase3.total.label')}</div>
-              <div className="text-4xl font-bold text-accent">{t('slides.roadmap.phase3.total.value')}</div>
+              <div className="text-xs xs:text-sm uppercase tracking-wider opacity-80 mb-1 xs:mb-2">{t('slides.roadmap.phase2.energy.label')}</div>
+              <div className="text-2xl xs:text-3xl sm:text-4xl font-bold">{t('slides.roadmap.phase2.energy.value')}</div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="bg-card border-2 border-border p-6 xs:p-8 sm:p-10 md:p-12 rounded-lg">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between mb-4 xs:mb-5 sm:mb-6 gap-2">
+            <h3 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-primary">{t('slides.roadmap.phase3.title')}</h3>
+            <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-primary">{t('slides.roadmap.phase3.period')}</div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-6 sm:gap-8">
+            <div>
+              <div className="text-xs xs:text-sm uppercase tracking-wider text-muted-foreground mb-1 xs:mb-2">{t('slides.roadmap.phase3.investment.label')}</div>
+              <div className="text-2xl xs:text-3xl sm:text-4xl font-bold text-primary">{t('slides.roadmap.phase3.investment.value')}</div>
+            </div>
+            <div>
+              <div className="text-xs xs:text-sm uppercase tracking-wider text-muted-foreground mb-1 xs:mb-2">{t('slides.roadmap.phase3.technology.label')}</div>
+              <div className="text-2xl xs:text-3xl sm:text-4xl font-bold text-primary">{t('slides.roadmap.phase3.technology.value')}</div>
+            </div>
+            <div>
+              <div className="text-xs xs:text-sm uppercase tracking-wider text-muted-foreground mb-1 xs:mb-2">{t('slides.roadmap.phase3.total.label')}</div>
+              <div className="text-2xl xs:text-3xl sm:text-4xl font-bold text-accent">{t('slides.roadmap.phase3.total.value')}</div>
             </div>
           </div>
         </div>
@@ -274,54 +274,54 @@ export const Slide27ESG = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={27} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16">
-        <div className="flex items-center gap-4 mb-12">
-          <Leaf className="w-10 h-10 text-accent" />
-          <h2 className="text-5xl font-bold text-primary">{t('slides.esg.title')}</h2>
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8 sm:mb-10 md:mb-12">
+          <Leaf className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-accent" />
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary">{t('slides.esg.title')}</h2>
         </div>
-      <div className="grid grid-cols-3 gap-8">
-        <div className="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 p-10 rounded-lg">
-          <div className="text-4xl mb-6">🌍</div>
-          <h3 className="text-3xl font-bold text-green-900 mb-6">{t('slides.esg.environmental.title')}</h3>
-          <ul className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 xs:gap-6 sm:gap-8">
+        <div className="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 p-6 xs:p-8 sm:p-10 rounded-lg">
+          <div className="text-3xl xs:text-4xl mb-3 xs:mb-4 sm:mb-6">🌍</div>
+          <h3 className="text-xl xs:text-2xl sm:text-3xl font-bold text-green-900 mb-3 xs:mb-4 sm:mb-6">{t('slides.esg.environmental.title')}</h3>
+          <ul className="space-y-2 xs:space-y-3 sm:space-y-4">
             {(t('slides.esg.environmental.items', { returnObjects: true }) as any[]).map((item, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <span className="text-green-600 text-xl">✓</span>
+              <li key={index} className="flex items-start gap-2 xs:gap-3">
+                <span className="text-green-600 text-base xs:text-lg sm:text-xl">✓</span>
                 <div>
-                  <div className="font-bold text-green-900">{item.title}</div>
-                  <div className="text-sm text-green-700">{item.description}</div>
+                  <div className="font-bold text-sm xs:text-base text-green-900">{item.title}</div>
+                  <div className="text-xs xs:text-sm text-green-700">{item.description}</div>
                 </div>
               </li>
             ))}
           </ul>
         </div>
         
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 p-10 rounded-lg">
-          <div className="text-4xl mb-6">👥</div>
-          <h3 className="text-3xl font-bold text-blue-900 mb-6">{t('slides.esg.social.title')}</h3>
-          <ul className="space-y-4">
+        <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 p-6 xs:p-8 sm:p-10 rounded-lg">
+          <div className="text-3xl xs:text-4xl mb-3 xs:mb-4 sm:mb-6">👥</div>
+          <h3 className="text-xl xs:text-2xl sm:text-3xl font-bold text-blue-900 mb-3 xs:mb-4 sm:mb-6">{t('slides.esg.social.title')}</h3>
+          <ul className="space-y-2 xs:space-y-3 sm:space-y-4">
             {(t('slides.esg.social.items', { returnObjects: true }) as any[]).map((item, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <span className="text-blue-600 text-xl">✓</span>
+              <li key={index} className="flex items-start gap-2 xs:gap-3">
+                <span className="text-blue-600 text-base xs:text-lg sm:text-xl">✓</span>
                 <div>
-                  <div className="font-bold text-blue-900">{item.title}</div>
-                  <div className="text-sm text-blue-700">{item.description}</div>
+                  <div className="font-bold text-sm xs:text-base text-blue-900">{item.title}</div>
+                  <div className="text-xs xs:text-sm text-blue-700">{item.description}</div>
                 </div>
               </li>
             ))}
           </ul>
         </div>
         
-        <div className="bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-200 p-10 rounded-lg">
-          <div className="text-4xl mb-6">⚖️</div>
-          <h3 className="text-3xl font-bold text-purple-900 mb-6">{t('slides.esg.governance.title')}</h3>
-          <ul className="space-y-4">
+        <div className="bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-200 p-6 xs:p-8 sm:p-10 rounded-lg md:col-span-2 xl:col-span-1">
+          <div className="text-3xl xs:text-4xl mb-3 xs:mb-4 sm:mb-6">⚖️</div>
+          <h3 className="text-xl xs:text-2xl sm:text-3xl font-bold text-purple-900 mb-3 xs:mb-4 sm:mb-6">{t('slides.esg.governance.title')}</h3>
+          <ul className="space-y-2 xs:space-y-3 sm:space-y-4">
             {(t('slides.esg.governance.items', { returnObjects: true }) as any[]).map((item, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <span className="text-purple-600 text-xl">✓</span>
+              <li key={index} className="flex items-start gap-2 xs:gap-3">
+                <span className="text-purple-600 text-base xs:text-lg sm:text-xl">✓</span>
                 <div>
-                  <div className="font-bold text-purple-900">{item.title}</div>
-                  <div className="text-sm text-purple-700">{item.description}</div>
+                  <div className="font-bold text-sm xs:text-base text-purple-900">{item.title}</div>
+                  <div className="text-xs xs:text-sm text-purple-700">{item.description}</div>
                 </div>
               </li>
             ))}
@@ -340,20 +340,20 @@ export const Slide28NextSteps = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={28} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16">
-        <h2 className="text-5xl font-bold text-primary mb-12">{t('slides.nextSteps.title')}</h2>
-      <div className="space-y-6">
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-6 xs:mb-8 sm:mb-10 md:mb-12">{t('slides.nextSteps.title')}</h2>
+      <div className="space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6">
         {(t('slides.nextSteps.steps', { returnObjects: true }) as any[]).map((step) => (
-          <div key={step.num} className="bg-card border-2 border-border p-8 rounded-lg hover:shadow-lg transition-shadow">
-            <div className="flex items-start gap-6">
-              <div className="w-16 h-16 rounded-full bg-accent text-accent-foreground flex items-center justify-center flex-shrink-0">
-                <span className="text-3xl font-bold">{step.num}</span>
+          <div key={step.num} className="bg-card border-2 border-border p-4 xs:p-6 sm:p-8 rounded-lg hover:shadow-lg transition-shadow">
+            <div className="flex flex-col xs:flex-row items-start gap-3 xs:gap-4 sm:gap-5 md:gap-6">
+              <div className="w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 rounded-full bg-accent text-accent-foreground flex items-center justify-center flex-shrink-0">
+                <span className="text-2xl xs:text-2xl sm:text-3xl font-bold">{step.num}</span>
               </div>
               <div className="flex-1">
-                <h3 className="text-2xl font-bold text-primary mb-2">{step.title}</h3>
-                <p className="text-foreground mb-3">{step.description}</p>
-                <div className="inline-block bg-muted px-4 py-2 rounded-lg">
-                  <span className="text-sm font-semibold text-muted-foreground">{t('slides.nextSteps.timeline')}: {step.timeline}</span>
+                <h3 className="text-lg xs:text-xl sm:text-2xl font-bold text-primary mb-1 xs:mb-2">{step.title}</h3>
+                <p className="text-sm xs:text-base text-foreground mb-2 xs:mb-3">{step.description}</p>
+                <div className="inline-block bg-muted px-3 xs:px-4 py-1 xs:py-2 rounded-lg">
+                  <span className="text-xs xs:text-sm font-semibold text-muted-foreground">{t('slides.nextSteps.timeline')}: {step.timeline}</span>
                 </div>
               </div>
             </div>
@@ -372,29 +372,29 @@ export const Slide29CTA = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={29} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16 flex flex-col items-center justify-center">
-        <div className="max-w-4xl text-center space-y-12">
-          <h2 className="text-6xl font-bold text-primary mb-8">
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16 flex flex-col items-center justify-center">
+        <div className="max-w-4xl text-center space-y-6 xs:space-y-8 sm:space-y-10 md:space-y-12">
+          <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-4 xs:mb-6 sm:mb-8">
             {t('slides.cta.title')}
           </h2>
         
-        <div className="bg-accent text-accent-foreground p-12 rounded-lg" style={{ boxShadow: 'var(--shadow-xl)' }}>
-          <p className="text-3xl font-bold leading-relaxed">
+        <div className="bg-accent text-accent-foreground p-6 xs:p-8 sm:p-10 md:p-12 rounded-lg" style={{ boxShadow: 'var(--shadow-xl)' }}>
+          <p className="text-xl xs:text-2xl sm:text-3xl font-bold leading-relaxed">
             {t('slides.cta.subtitle')}
           </p>
         </div>
         
-        <div className="grid grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-6 sm:gap-8 mt-6 xs:mt-8 sm:mt-10 md:mt-12">
           {(t('slides.cta.highlights', { returnObjects: true }) as any[]).map((highlight, index) => (
-            <div key={index} className="bg-card border-2 border-border p-8 rounded-lg">
-              <div className="text-5xl font-bold text-accent mb-3">{highlight.value}</div>
-              <div className="text-lg text-foreground">{highlight.description}</div>
+            <div key={index} className="bg-card border-2 border-border p-4 xs:p-6 sm:p-8 rounded-lg">
+              <div className="text-3xl xs:text-4xl sm:text-5xl font-bold text-accent mb-2 xs:mb-3">{highlight.value}</div>
+              <div className="text-sm xs:text-base sm:text-lg text-foreground">{highlight.description}</div>
             </div>
           ))}
         </div>
         
-        <div className="pt-12">
-          <p className="text-3xl font-bold text-primary">
+        <div className="pt-6 xs:pt-8 sm:pt-10 md:pt-12">
+          <p className="text-xl xs:text-2xl sm:text-3xl font-bold text-primary">
             {t('slides.cta.callToAction')}
           </p>
         </div>

@@ -95,36 +95,36 @@ export const Slide18Market = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={18} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16">
-        <h2 className="text-5xl font-bold text-primary mb-12">{t('slides.market.title')}</h2>
-        <div className="grid grid-cols-2 gap-12">
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-6 xs:mb-8 sm:mb-10 md:mb-12">{t('slides.market.title')}</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 lg:gap-12">
           <div>
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 p-10 rounded-lg mb-6">
-              <h3 className="text-3xl font-bold text-blue-900 mb-8">{growthData.title}</h3>
-              <div className="space-y-6">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 p-6 xs:p-8 sm:p-10 rounded-lg mb-4 xs:mb-5 sm:mb-6">
+              <h3 className="text-xl xs:text-2xl sm:text-3xl font-bold text-blue-900 mb-4 xs:mb-6 sm:mb-8">{growthData.title}</h3>
+              <div className="space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6">
                 {growthData.data.map((item, index) => (
                   <div key={index}>
-                    <div className="text-sm uppercase tracking-wider text-blue-700 mb-2">{item.year}</div>
-                    <div className="text-4xl font-bold text-blue-900">{item.value}</div>
+                    <div className="text-xs xs:text-sm uppercase tracking-wider text-blue-700 mb-1 xs:mb-2">{item.year}</div>
+                    <div className="text-2xl xs:text-3xl sm:text-4xl font-bold text-blue-900">{item.value}</div>
                   </div>
                 ))}
-                <div className="pt-4 border-t border-blue-300">
-                  <div className="text-2xl font-bold text-blue-700">{growthData.cagr.value}</div>
-                  <div className="text-sm text-blue-600 mt-1">{growthData.cagr.label}</div>
+                <div className="pt-3 xs:pt-4 border-t border-blue-300">
+                  <div className="text-lg xs:text-xl sm:text-2xl font-bold text-blue-700">{growthData.cagr.value}</div>
+                  <div className="text-xs xs:text-sm text-blue-600 mt-1">{growthData.cagr.label}</div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="space-y-6">
-            <div className="bg-card border-2 border-border p-8 rounded-lg">
-              <h4 className="text-2xl font-bold text-primary mb-6">{t('slides.market.targetClientsTitle')}</h4>
-              <div className="space-y-4">
+          <div className="space-y-4 xs:space-y-5 sm:space-y-6">
+            <div className="bg-card border-2 border-border p-4 xs:p-6 sm:p-8 rounded-lg">
+              <h4 className="text-lg xs:text-xl sm:text-2xl font-bold text-primary mb-4 xs:mb-5 sm:mb-6">{t('slides.market.targetClientsTitle')}</h4>
+              <div className="space-y-3 xs:space-y-4">
                 {targetClients.map((client, index) => (
-                  <div key={index} className="flex items-center gap-4 p-4 bg-muted rounded-lg">
-                    <span className="text-3xl">{client.emoji}</span>
+                  <div key={index} className="flex items-center gap-2 xs:gap-3 sm:gap-4 p-3 xs:p-4 bg-muted rounded-lg">
+                    <span className="text-2xl xs:text-3xl">{client.emoji}</span>
                     <div>
-                      <div className="font-bold">{client.title}</div>
-                      <div className="text-sm text-muted-foreground">{client.description}</div>
+                      <div className="font-bold text-sm xs:text-base">{client.title}</div>
+                      <div className="text-xs xs:text-sm text-muted-foreground">{client.description}</div>
                     </div>
                   </div>
                 ))}
@@ -146,12 +146,12 @@ export const Slide19Projections = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={19} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16">
-        <div className="flex items-center gap-4 mb-8">
-          <TrendingUp className="w-10 h-10 text-accent" />
-          <h2 className="text-5xl font-bold text-primary">{t('slides.projections.title')}</h2>
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8">
+          <TrendingUp className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-accent" />
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary">{t('slides.projections.title')}</h2>
         </div>
-        <div className="h-[450px] min-w-0 w-full">
+        <div className="h-[300px] xs:h-[350px] sm:h-[400px] md:h-[450px] min-w-0 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={slideData.revenueProjection}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
@@ -189,11 +189,11 @@ export const Slide19Projections = () => {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className="grid grid-cols-4 gap-6 mt-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-5 md:gap-6 mt-6 xs:mt-8">
           {highlights.map((highlight, index) => (
-            <div key={index} className="bg-card border-2 border-border p-6 rounded-lg text-center">
-              <div className="text-sm text-muted-foreground mb-2">{highlight.label}</div>
-              <div className="text-3xl font-bold text-primary">{highlight.value}</div>
+            <div key={index} className="bg-card border-2 border-border p-3 xs:p-4 sm:p-5 md:p-6 rounded-lg text-center">
+              <div className="text-xs xs:text-sm text-muted-foreground mb-1 xs:mb-2">{highlight.label}</div>
+              <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-primary">{highlight.value}</div>
             </div>
           ))}
         </div>
@@ -214,58 +214,58 @@ export const Slide20Financials = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={20} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16">
-        <div className="flex items-center gap-4 mb-12">
-          <BarChart3 className="w-10 h-10 text-accent" />
-          <h2 className="text-5xl font-bold text-primary">Demonstração de Resultados</h2>
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8 sm:mb-10 md:mb-12">
+          <BarChart3 className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-accent" />
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary">Demonstração de Resultados</h2>
         </div>
-        <div className="bg-white rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow-lg)' }}>
-          <table className="w-full">
+        <div className="bg-white rounded-lg overflow-hidden overflow-x-auto" style={{ boxShadow: 'var(--shadow-lg)' }}>
+          <table className="w-full min-w-[600px]">
             <thead>
               <tr className="bg-primary text-primary-foreground">
-                <th className="text-left p-6 text-lg font-bold">Métrica</th>
+                <th className="text-left p-3 xs:p-4 sm:p-5 md:p-6 text-sm xs:text-base sm:text-lg font-bold">Métrica</th>
                 {years.map((y) => (
-                  <th key={y.year} className="text-center p-6 text-lg font-bold">{y.year}</th>
+                  <th key={y.year} className="text-center p-3 xs:p-4 sm:p-5 md:p-6 text-sm xs:text-base sm:text-lg font-bold">{y.year}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               <tr className="border-b border-border bg-blue-50">
-                <td className="p-6 font-bold text-lg">Receita</td>
+                <td className="p-3 xs:p-4 sm:p-5 md:p-6 font-bold text-sm xs:text-base sm:text-lg">Receita</td>
                 {years.map((y) => (
-                  <td key={y.year} className="p-6 text-center text-xl font-bold text-blue-700">
+                  <td key={y.year} className="p-3 xs:p-4 sm:p-5 md:p-6 text-center text-base xs:text-lg sm:text-xl font-bold text-blue-700">
                     USD {y.revenue}M
                   </td>
                 ))}
               </tr>
               <tr className="border-b border-border">
-                <td className="p-6 font-bold text-lg">OPEX</td>
+                <td className="p-3 xs:p-4 sm:p-5 md:p-6 font-bold text-sm xs:text-base sm:text-lg">OPEX</td>
                 {years.map((y) => (
-                  <td key={y.year} className="p-6 text-center text-xl font-semibold text-red-600">
+                  <td key={y.year} className="p-3 xs:p-4 sm:p-5 md:p-6 text-center text-base xs:text-lg sm:text-xl font-semibold text-red-600">
                     (USD {y.opex}M)
                   </td>
                 ))}
               </tr>
               <tr className="border-b border-border bg-orange-50">
-                <td className="p-6 font-bold text-lg">EBITDA</td>
+                <td className="p-3 xs:p-4 sm:p-5 md:p-6 font-bold text-sm xs:text-base sm:text-lg">EBITDA</td>
                 {years.map((y) => (
-                  <td key={y.year} className="p-6 text-center text-xl font-bold text-orange-700">
+                  <td key={y.year} className="p-3 xs:p-4 sm:p-5 md:p-6 text-center text-base xs:text-lg sm:text-xl font-bold text-orange-700">
                     USD {y.ebitda}M
                   </td>
                 ))}
               </tr>
               <tr className="border-b border-border bg-green-50">
-                <td className="p-6 font-bold text-lg">Impostos</td>
+                <td className="p-3 xs:p-4 sm:p-5 md:p-6 font-bold text-sm xs:text-base sm:text-lg">Impostos</td>
                 {years.map((y) => (
-                  <td key={y.year} className="p-6 text-center text-xl font-bold text-green-700">
+                  <td key={y.year} className="p-3 xs:p-4 sm:p-5 md:p-6 text-center text-base xs:text-lg sm:text-xl font-bold text-green-700">
                     USD 0M ✓
                   </td>
                 ))}
               </tr>
               <tr className="bg-accent text-accent-foreground">
-                <td className="p-6 font-bold text-xl">Lucro Líquido</td>
+                <td className="p-3 xs:p-4 sm:p-5 md:p-6 font-bold text-base xs:text-lg sm:text-xl">Lucro Líquido</td>
                 {years.map((y) => (
-                  <td key={y.year} className="p-6 text-center text-2xl font-bold">
+                  <td key={y.year} className="p-3 xs:p-4 sm:p-5 md:p-6 text-center text-lg xs:text-xl sm:text-2xl font-bold">
                     USD {y.profit}M
                   </td>
                 ))}
@@ -273,10 +273,10 @@ export const Slide20Financials = () => {
             </tbody>
           </table>
         </div>
-        <div className="mt-8 bg-green-50 border-2 border-green-200 p-6 rounded-lg">
-          <div className="flex items-center justify-center gap-4">
-            <span className="text-3xl">✓</span>
-            <div className="text-xl font-bold text-green-900">
+        <div className="mt-6 xs:mt-8 bg-green-50 border-2 border-green-200 p-4 xs:p-5 sm:p-6 rounded-lg">
+          <div className="flex flex-col xs:flex-row items-center justify-center gap-2 xs:gap-3 sm:gap-4 text-center xs:text-left">
+            <span className="text-2xl xs:text-3xl">✓</span>
+            <div className="text-base xs:text-lg sm:text-xl font-bold text-green-900">
               Lei 19.640: Isenção total de impostos garante 100% do EBITDA como lucro líquido
             </div>
           </div>
@@ -345,44 +345,44 @@ export const Slide22Sensitivity = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={22} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16">
-        <h2 className="text-5xl font-bold text-primary mb-12">{t('slides.sensitivity.title')}</h2>
-        <div className="grid grid-cols-2 gap-12">
-          <div className="bg-card border-2 border-border p-8 rounded-lg">
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-6 xs:mb-8 sm:mb-10 md:mb-12">{t('slides.sensitivity.title')}</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 lg:gap-12">
+          <div className="bg-card border-2 border-border p-4 xs:p-6 sm:p-8 rounded-lg">
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full min-w-[500px]">
                 <thead>
                   <tr className="border-b-2 border-border">
-                    <th className="text-left py-4 text-lg font-bold">{t('slides.sensitivity.table.variable')}</th>
-                    <th className="text-center py-4 text-lg font-bold">{t('slides.sensitivity.table.baseScenario')}</th>
-                    <th className="text-center py-4 text-lg font-bold">{t('slides.sensitivity.table.worstScenario')}</th>
-                    <th className="text-center py-4 text-lg font-bold">{t('slides.sensitivity.table.bestScenario')}</th>
+                    <th className="text-left py-2 xs:py-3 sm:py-4 text-sm xs:text-base sm:text-lg font-bold">{t('slides.sensitivity.table.variable')}</th>
+                    <th className="text-center py-2 xs:py-3 sm:py-4 text-sm xs:text-base sm:text-lg font-bold">{t('slides.sensitivity.table.baseScenario')}</th>
+                    <th className="text-center py-2 xs:py-3 sm:py-4 text-sm xs:text-base sm:text-lg font-bold">{t('slides.sensitivity.table.worstScenario')}</th>
+                    <th className="text-center py-2 xs:py-3 sm:py-4 text-sm xs:text-base sm:text-lg font-bold">{t('slides.sensitivity.table.bestScenario')}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {sensitivityData.map((row, index) => (
                     <tr key={index} className={`border-b border-border ${index === sensitivityData.length - 1 ? 'bg-primary/5' : ''}`}>
-                      <td className={`py-3 ${index === sensitivityData.length - 1 ? 'font-bold' : 'font-medium'}`}>{row.variable}</td>
-                      <td className={`text-center py-3 ${index === sensitivityData.length - 1 ? 'font-bold' : ''}`}>{row.base}</td>
-                      <td className={`text-center py-3 ${index === sensitivityData.length - 1 ? 'font-bold text-red-600' : 'text-red-600'}`}>{row.worst}</td>
-                      <td className={`text-center py-3 ${index === sensitivityData.length - 1 ? 'font-bold text-green-600' : 'text-green-600'}`}>{row.best}</td>
+                      <td className={`py-2 xs:py-3 text-xs xs:text-sm sm:text-base ${index === sensitivityData.length - 1 ? 'font-bold' : 'font-medium'}`}>{row.variable}</td>
+                      <td className={`text-center py-2 xs:py-3 text-xs xs:text-sm sm:text-base ${index === sensitivityData.length - 1 ? 'font-bold' : ''}`}>{row.base}</td>
+                      <td className={`text-center py-2 xs:py-3 text-xs xs:text-sm sm:text-base ${index === sensitivityData.length - 1 ? 'font-bold text-red-600' : 'text-red-600'}`}>{row.worst}</td>
+                      <td className={`text-center py-2 xs:py-3 text-xs xs:text-sm sm:text-base ${index === sensitivityData.length - 1 ? 'font-bold text-green-600' : 'text-green-600'}`}>{row.best}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6">
             {scenarios.map((scenario, index) => (
-              <div key={index} className={`bg-gradient-to-br from-${scenario.color}-50 to-${scenario.color}-100 border-2 border-${scenario.color}-200 p-8 rounded-lg`}>
-                <h3 className={`text-2xl font-bold text-${scenario.color}-900 mb-4`}>{scenario.title}</h3>
-                <div className={`text-4xl font-bold text-${scenario.color}-900 mb-2`}>{scenario.irr}</div>
-                <div className={`text-lg text-${scenario.color}-700`}>{scenario.description}</div>
+              <div key={index} className={`bg-gradient-to-br from-${scenario.color}-50 to-${scenario.color}-100 border-2 border-${scenario.color}-200 p-4 xs:p-6 sm:p-8 rounded-lg`}>
+                <h3 className={`text-lg xs:text-xl sm:text-2xl font-bold text-${scenario.color}-900 mb-2 xs:mb-3 sm:mb-4`}>{scenario.title}</h3>
+                <div className={`text-2xl xs:text-3xl sm:text-4xl font-bold text-${scenario.color}-900 mb-1 xs:mb-2`}>{scenario.irr}</div>
+                <div className={`text-sm xs:text-base sm:text-lg text-${scenario.color}-700`}>{scenario.description}</div>
               </div>
             ))}
-            <div className="bg-card border-2 border-border p-6 rounded-lg">
-              <h4 className="text-xl font-bold text-primary mb-4">{t('slides.sensitivity.conclusionTitle')}</h4>
-              <p className="text-muted-foreground leading-relaxed">
+            <div className="bg-card border-2 border-border p-4 xs:p-5 sm:p-6 rounded-lg">
+              <h4 className="text-base xs:text-lg sm:text-xl font-bold text-primary mb-3 xs:mb-4">{t('slides.sensitivity.conclusionTitle')}</h4>
+              <p className="text-sm xs:text-base text-muted-foreground leading-relaxed">
                 {t('slides.sensitivity.conclusion')}
               </p>
             </div>
