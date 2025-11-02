@@ -84,47 +84,47 @@ export const Slide14Cooling = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={14} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16">
-        <div className="flex items-center gap-4 mb-12">
-          <Thermometer className="w-10 h-10 text-accent" />
-          <h2 className="text-5xl font-bold text-primary">{t('slides.cooling.title')}</h2>
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8 sm:mb-10 md:mb-12">
+          <Thermometer className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-accent" />
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary">{t('slides.cooling.title')}</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 p-10 rounded-lg">
-            <h3 className="text-3xl font-bold text-blue-900 mb-8">{t('slides.cooling.freeAir.title')}</h3>
-            <div className="space-y-6 text-blue-900">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 lg:gap-12">
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 p-6 xs:p-8 sm:p-10 rounded-lg">
+            <h3 className="text-xl xs:text-2xl sm:text-3xl font-bold text-blue-900 mb-4 xs:mb-6 sm:mb-8">{t('slides.cooling.freeAir.title')}</h3>
+            <div className="space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6 text-blue-900">
               {freeAirFeatures.map((feature, index) => {
                 const IconComponent = iconMap[feature.icon];
                 return (
-                  <div key={index} className="flex items-start gap-4">
-                    <span className="text-3xl text-blue-600">
-                      {IconComponent ? <IconComponent size={24} /> : feature.icon}
+                  <div key={index} className="flex items-start gap-2 xs:gap-3 sm:gap-4">
+                    <span className="text-xl xs:text-2xl sm:text-3xl text-blue-600">
+                      {IconComponent ? <IconComponent size={20} className="xs:w-5 xs:h-5 sm:w-6 sm:h-6" /> : feature.icon}
                     </span>
                     <div>
-                      <div className="font-bold text-xl mb-2">{feature.title}</div>
-                      <div className="text-blue-700">{feature.description}</div>
+                      <div className="font-bold text-base xs:text-lg sm:text-xl mb-1 xs:mb-2">{feature.title}</div>
+                      <div className="text-sm xs:text-base text-blue-700">{feature.description}</div>
                     </div>
                   </div>
                 );
               })}
             </div>
           </div>
-          <div className="space-y-6">
-            <div className="bg-card border-2 border-border p-8 rounded-lg">
-              <h4 className="text-2xl font-bold text-primary mb-6">{t('slides.cooling.liquidCooling.title')}</h4>
-              <div className="space-y-4">
-                <p className="text-foreground">{t('slides.cooling.liquidCooling.description')}</p>
-                <ul className="space-y-3">
+          <div className="space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6">
+            <div className="bg-card border-2 border-border p-4 xs:p-6 sm:p-8 rounded-lg">
+              <h4 className="text-lg xs:text-xl sm:text-2xl font-bold text-primary mb-3 xs:mb-4 sm:mb-6">{t('slides.cooling.liquidCooling.title')}</h4>
+              <div className="space-y-2 xs:space-y-3 sm:space-y-4">
+                <p className="text-sm xs:text-base text-foreground">{t('slides.cooling.liquidCooling.description')}</p>
+                <ul className="space-y-2 xs:space-y-3">
                   {liquidCoolingFeatures.map((feature, index) => {
                     const IconComponent = iconMap[feature.icon];
                     return (
-                      <li key={index} className="flex items-start gap-3">
-                        <span className="text-accent text-xl">
-                          {IconComponent ? <IconComponent size={16} /> : "✓"}
+                      <li key={index} className="flex items-start gap-2 xs:gap-3">
+                        <span className="text-accent text-base xs:text-lg sm:text-xl">
+                          {IconComponent ? <IconComponent size={14} className="xs:w-4 xs:h-4" /> : "✓"}
                         </span>
                         <div>
-                          <div className="font-semibold">{feature.title}</div>
-                          <div className="text-sm text-muted-foreground">{feature.description}</div>
+                          <div className="font-semibold text-sm xs:text-base">{feature.title}</div>
+                          <div className="text-xs xs:text-sm text-muted-foreground">{feature.description}</div>
                         </div>
                       </li>
                     );
@@ -132,11 +132,11 @@ export const Slide14Cooling = () => {
                 </ul>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
               {metrics.map((metric, index) => (
-                <div key={index} className={`bg-${metric.color}-50 border-2 border-${metric.color}-200 p-6 rounded-lg text-center`}>
-                  <div className={`text-4xl font-bold text-${metric.color}-700 mb-2`}>{metric.value}</div>
-                  <div className={`text-sm text-${metric.color}-900`}>{metric.label}</div>
+                <div key={index} className={`bg-${metric.color}-50 border-2 border-${metric.color}-200 p-3 xs:p-4 sm:p-5 md:p-6 rounded-lg text-center`}>
+                  <div className={`text-2xl xs:text-3xl sm:text-4xl font-bold text-${metric.color}-700 mb-1 xs:mb-2`}>{metric.value}</div>
+                  <div className={`text-xs xs:text-sm text-${metric.color}-900`}>{metric.label}</div>
                 </div>
               ))}
             </div>
@@ -155,13 +155,13 @@ export const Slide15Capex = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={15} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16">
-        <div className="flex items-center gap-4 mb-12">
-          <DollarSign className="w-10 h-10 text-accent" />
-          <h2 className="text-5xl font-bold text-primary">{t('slides.capex.title')}</h2>
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8 sm:mb-10 md:mb-12">
+          <DollarSign className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-accent" />
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary">{t('slides.capex.title')}</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="h-[500px] min-w-0 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 lg:gap-12 items-center">
+          <div className="h-[300px] xs:h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] min-w-0 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
@@ -182,29 +182,29 @@ export const Slide15Capex = () => {
               </PieChart>
             </ResponsiveContainer>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-2 xs:space-y-3 sm:space-y-4">
             {slideData.capexBreakdown.map((item, index) => (
-              <div key={index} className="bg-card border-2 border-border p-6 rounded-lg">
-                <div className="flex justify-between items-center mb-2">
-                  <div className="font-bold text-xl text-primary">{item.category}</div>
+              <div key={index} className="bg-card border-2 border-border p-3 xs:p-4 sm:p-5 md:p-6 rounded-lg">
+                <div className="flex justify-between items-center mb-1 xs:mb-2">
+                  <div className="font-bold text-sm xs:text-base sm:text-lg md:text-xl text-primary">{item.category}</div>
                   <div 
-                    className="w-4 h-4 rounded-full" 
+                    className="w-3 h-3 xs:w-4 xs:h-4 rounded-full" 
                     style={{ backgroundColor: COLORS[index] }}
                   />
                 </div>
                 <div className="flex justify-between items-end">
-                  <div className="text-3xl font-bold text-accent">
+                  <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-accent">
                     USD {item.value}M
                   </div>
-                  <div className="text-2xl font-bold text-muted-foreground">
+                  <div className="text-lg xs:text-xl sm:text-2xl font-bold text-muted-foreground">
                     {item.percent}%
                   </div>
                 </div>
               </div>
             ))}
-            <div className="bg-primary text-primary-foreground p-6 rounded-lg mt-6">
-              <div className="text-sm uppercase tracking-wider opacity-80 mb-2">{t('slides.capex.totalInvestment')}</div>
-              <div className="text-5xl font-bold">{t('slides.capex.totalValue')}</div>
+            <div className="bg-primary text-primary-foreground p-4 xs:p-5 sm:p-6 rounded-lg mt-3 xs:mt-4 sm:mt-6">
+              <div className="text-xs xs:text-sm uppercase tracking-wider opacity-80 mb-1 xs:mb-2">{t('slides.capex.totalInvestment')}</div>
+              <div className="text-3xl xs:text-4xl sm:text-5xl font-bold">{t('slides.capex.totalValue')}</div>
             </div>
           </div>
         </div>
@@ -221,22 +221,22 @@ export const Slide16Timeline = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={16} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16">
-        <div className="flex items-center gap-4 mb-12">
-          <Calendar className="w-10 h-10 text-accent" />
-          <h2 className="text-5xl font-bold text-primary">{t('slides.timeline.title')}</h2>
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8 sm:mb-10 md:mb-12">
+          <Calendar className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-accent" />
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-primary">{t('slides.timeline.title')}</h2>
         </div>
-        <div className="space-y-8">
+        <div className="space-y-4 xs:space-y-5 sm:space-y-6 md:space-y-8">
           {slideData.timeline.map((phase, index) => (
             <div key={index} className="relative">
-              <div className="flex items-center gap-6">
-                <div className="w-48 text-right">
-                  <div className="font-bold text-xl text-primary">{phase.phase}</div>
-                  <div className="text-sm text-muted-foreground">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 xs:gap-3 sm:gap-4 md:gap-6">
+                <div className="w-full sm:w-32 md:w-40 lg:w-48 text-left sm:text-right">
+                  <div className="font-bold text-sm xs:text-base sm:text-lg md:text-xl text-primary">{phase.phase}</div>
+                  <div className="text-xs xs:text-sm text-muted-foreground">
                     {t('slides.timeline.months')} {phase.start}-{phase.start + phase.duration}
                   </div>
                 </div>
-                <div className="flex-1 h-20 bg-muted rounded-lg overflow-hidden relative">
+                <div className="flex-1 w-full h-12 xs:h-14 sm:h-16 md:h-20 bg-muted rounded-lg overflow-hidden relative">
                   <div 
                     className="h-full bg-accent transition-all"
                     style={{ 
@@ -245,17 +245,17 @@ export const Slide16Timeline = () => {
                     }}
                   />
                 </div>
-                <div className="w-32 text-center">
-                  <div className="text-2xl font-bold text-accent">{phase.duration}m</div>
+                <div className="w-full sm:w-20 md:w-24 lg:w-32 text-left sm:text-center">
+                  <div className="text-lg xs:text-xl sm:text-2xl font-bold text-accent">{phase.duration}m</div>
                 </div>
               </div>
             </div>
           ))}
-          <div className="mt-12 grid grid-cols-3 gap-6">
+          <div className="mt-6 xs:mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 xs:gap-4 sm:gap-5 md:gap-6">
             {summaryCards.map((card, index) => (
-              <div key={index} className={`bg-${card.color}-50 border-2 border-${card.color}-200 p-6 rounded-lg text-center`}>
-                <div className={`text-3xl font-bold text-${card.color}-700 mb-2`}>{card.value}</div>
-                <div className={`text-sm text-${card.color}-900`}>{card.label}</div>
+              <div key={index} className={`bg-${card.color}-50 border-2 border-${card.color}-200 p-3 xs:p-4 sm:p-5 md:p-6 rounded-lg text-center`}>
+                <div className={`text-xl xs:text-2xl sm:text-3xl font-bold text-${card.color}-700 mb-1 xs:mb-2`}>{card.value}</div>
+                <div className={`text-xs xs:text-sm text-${card.color}-900`}>{card.label}</div>
               </div>
             ))}
           </div>
