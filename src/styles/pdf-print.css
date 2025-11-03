@@ -1,0 +1,146 @@
+/* PDF Print Optimization Styles */
+
+/* Otimizações gerais para captura de tela/PDF */
+@media print, screen {
+  /* Garantir que elementos fixos não interfiram na captura */
+  .pdf-capture * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Melhorar qualidade de texto para PDF */
+  .pdf-capture {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Garantir que backgrounds sejam preservados */
+  .pdf-capture,
+  .pdf-capture * {
+    background-color: inherit !important;
+    background-image: inherit !important;
+    background-size: inherit !important;
+    background-position: inherit !important;
+    background-repeat: inherit !important;
+  }
+
+  /* Otimizar sombras e bordas para PDF */
+  .pdf-capture {
+    box-shadow: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Garantir visibilidade de elementos importantes */
+  .pdf-capture .opacity-70 {
+    opacity: 0.8 !important;
+  }
+
+  .pdf-capture .opacity-80 {
+    opacity: 0.9 !important;
+  }
+
+  .pdf-capture .opacity-90 {
+    opacity: 0.95 !important;
+  }
+}
+
+/* Media query específica para impressão */
+@media print {
+  /* Ocultar elementos de navegação */
+  button,
+  .fixed,
+  [role="button"],
+  .pointer-events-none {
+    display: none !important;
+  }
+
+  /* Garantir que o slide ocupe toda a página */
+  [data-slide] {
+    width: 100% !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    page-break-inside: avoid !important;
+    page-break-after: always !important;
+  }
+
+  /* Remover margens da página */
+  @page {
+    margin: 0;
+    size: landscape;
+  }
+
+  /* Otimizar tipografia para impressão */
+  body {
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Garantir contraste adequado */
+  * {
+    color: #000 !important;
+    background: transparent !important;
+  }
+
+  /* Preservar cores importantes */
+  .bg-primary,
+  .text-primary,
+  .border-primary {
+    background-color: #1a365d !important;
+    color: #1a365d !important;
+    border-color: #1a365d !important;
+  }
+
+  .bg-secondary,
+  .text-secondary {
+    background-color: #4a5568 !important;
+    color: #4a5568 !important;
+  }
+}
+
+/* Classe utilitária para aplicar durante captura */
+.pdf-optimized {
+  /* Remover animações durante captura */
+  * {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+
+  /* Garantir que elementos sejam visíveis */
+  .opacity-0 {
+    opacity: 1 !important;
+  }
+
+  .invisible {
+    visibility: visible !important;
+  }
+
+  .hidden {
+    display: block !important;
+  }
+
+  /* Otimizar para captura de alta qualidade */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Estilos específicos para slides com backgrounds complexos */
+.slide-with-image {
+  background-attachment: scroll !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+/* Garantir legibilidade de texto sobre imagens */
+.text-overlay {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(2px) !important;
+  padding: 0.5rem !important;
+  border-radius: 0.25rem !important;
+}

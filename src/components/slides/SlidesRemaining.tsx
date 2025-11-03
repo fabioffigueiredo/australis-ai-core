@@ -151,34 +151,42 @@ export const Slide14Cooling = () => {
 export const Slide15Capex = () => {
   const { t } = useTranslation();
   const COLORS = ['#1A3B5C', '#FF6B35', '#4A90E2', '#50C878', '#FFB84D'];
+  // Formata o label do setor de pizza garantindo tipo numérico
+  const formatPieLabel = (props: any): React.ReactNode => {
+    const raw = typeof props?.percent === 'number' ? props.percent : Number(props?.percent);
+    const pct = Number.isFinite(raw) ? raw : 0;
+    return `${Math.round(pct * 100)}%`;
+  };
   
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={15} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16">
-        <div className="flex items-center gap-4 mb-12">
-          <DollarSign className="w-10 h-10 text-accent" />
-          <h2 className="text-5xl font-bold text-primary">{t('slides.capex.title')}</h2>
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8 sm:mb-10 lg:mb-12">
+          <DollarSign className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-accent" />
+          <h2 className="slide-title-responsive text-primary">{t('slides.capex.title')}</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="h-[500px] min-w-0 w-full">
-            <ResponsiveContainer width="100%" height="100%">
+        <div className="grid grid-responsive-1-2 gap-responsive-md items-center">
+          <div className="w-full min-w-0">
+            <ResponsiveContainer width="100%" aspect={1}>
               <PieChart>
                 <Pie
                   data={slideData.capexBreakdown}
                   cx="50%"
                   cy="50%"
-                  labelLine={false}
-                  label={(entry) => `${entry.percent}%`}
-                  outerRadius={180}
-                  fill="#8884d8"
+                  nameKey="category"
                   dataKey="value"
+                  labelLine={false}
+                  label={formatPieLabel}
+                  outerRadius="80%"
+                  paddingAngle={1}
+                  minAngle={2}
                 >
                   {slideData.capexBreakdown.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
-                <Legend />
+                <Legend layout="horizontal" align="center" verticalAlign="bottom" />
               </PieChart>
             </ResponsiveContainer>
           </div>
@@ -197,7 +205,7 @@ export const Slide15Capex = () => {
                     USD {item.value}M
                   </div>
                   <div className="text-2xl font-bold text-muted-foreground">
-                    {item.percent}%
+                    {Math.round(item.percent * 100)}%
                   </div>
                 </div>
               </div>

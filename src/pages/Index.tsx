@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "@/components/LanguageSelector";
+import PDFExporter from "@/components/PDFExporter";
 import { Slide01Cover } from "@/components/slides/Slide01Cover";
 import { Slide02Disclaimer } from "@/components/slides/Slide02Disclaimer";
 import { Slide03Executive } from "@/components/slides/Slide03Executive";
@@ -77,8 +78,25 @@ const Index = () => {
 
   return (
     <div className="relative w-screen h-screen overflow-y-auto bg-background">
-      <div className="w-full min-h-full">
+      <div className="w-full min-h-full" data-slide={`slide-${currentSlide + 1}`}>
         {slides[currentSlide]}
+      </div>
+
+      {/* Offscreen renderer para exportação de PDF: renderiza todos os slides em tamanho de tela, fora da viewport */}
+      <div
+        id="pdf-offscreen"
+        aria-hidden="true"
+        className="fixed top-0 -left-[10000px] w-[100vw] h-[100vh] overflow-hidden z-[-1] pdf-optimized"
+      >
+        {slides.map((SlideComponent, idx) => (
+          <div
+            key={`pdf-slide-${idx}`}
+            data-slide={`slide-${idx + 1}`}
+            className="w-screen h-screen"
+          >
+            {SlideComponent}
+          </div>
+        ))}
       </div>
 
       {/* Navigation Controls - Lateral positioning */}
@@ -105,6 +123,22 @@ const Index = () => {
       </button>
 
 
+
+      {/* PDF Export Button - canto inferior esquerdo, responsivo e com respeito a safe areas */}
+      <div 
+        className="fixed z-50"
+        style={{ 
+          bottom: 'calc(env(safe-area-inset-bottom) + 1rem)', 
+          left: 'calc(env(safe-area-inset-left) + 1rem)'
+        }}
+      >
+        {/* Min 44px touch target para acessibilidade; outline para contraste em diferentes backgrounds */}
+        <PDFExporter 
+          variant="outline" 
+          size="default" 
+          className="min-h-[44px] px-3 xs:px-4 text-[clamp(12px,2.5vw,14px)]"
+        />
+      </div>
 
       {/* Language Selector */}
       <div 

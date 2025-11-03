@@ -17,11 +17,11 @@ export const slideData = {
   ],
   
   capexBreakdown: [
-    { category: "it_equipment", value: 325, percent: 65 },
-    { category: "construction", value: 100, percent: 20 },
-    { category: "energy_cooling", value: 50, percent: 10 },
-    { category: "connectivity", value: 10, percent: 2 },
-    { category: "contingency", value: 15, percent: 3 }
+    { category: "it_equipment", value: 325, percent: 0.65 },
+    { category: "construction", value: 100, percent: 0.20 },
+    { category: "energy_cooling", value: 50, percent: 0.10 },
+    { category: "connectivity", value: 10, percent: 0.02 },
+    { category: "contingency", value: 15, percent: 0.03 }
   ],
   
   timeline: [

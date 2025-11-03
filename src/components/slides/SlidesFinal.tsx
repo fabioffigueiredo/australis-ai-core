@@ -70,38 +70,52 @@ export const Slide24CSF = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={24} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16">
-        <div className="flex items-center gap-4 mb-12">
-          <Target className="w-10 h-10 text-accent" />
-          <h2 className="text-5xl font-bold text-primary">{t('slides.csf.title')}</h2>
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <div className="flex flex-col xs:flex-row items-start xs:items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8 sm:mb-10 lg:mb-12">
+          <Target className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-accent" />
+          <h2 className="slide-title-responsive text-primary">{t('slides.csf.title')}</h2>
         </div>
-      <div className="grid grid-cols-2 gap-8">
-        {(t('slides.csf.factors', { returnObjects: true }) as any[][]).map((column, columnIndex) => (
-          <div key={columnIndex} className="space-y-6">
-            {column.map((factor, index) => (
-              <div key={index} className="bg-green-50 border-4 border-green-300 p-8 rounded-lg">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
-                    ✓
+        
+        {/* Layout responsivo: 1 coluna no mobile, 2 no tablet+ */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xs:gap-6 sm:gap-8">
+          {(t('slides.csf.factors', { returnObjects: true }) as any[][]).map((column, columnIndex) => (
+            <div key={columnIndex} className="space-y-4 xs:space-y-5 sm:space-y-6">
+              {column.map((factor, index) => (
+                <div 
+                  key={index} 
+                  className="group bg-green-50 border-2 xs:border-3 sm:border-4 border-green-300 p-4 xs:p-5 sm:p-6 md:p-8 rounded-lg xs:rounded-xl shadow-sm hover:shadow-lg hover:border-green-400 transition-all duration-300 ease-out transform hover:-translate-y-1"
+                  role="article"
+                  aria-labelledby={`factor-title-${columnIndex}-${index}`}
+                >
+                  <div className="flex items-start xs:items-center gap-3 xs:gap-4 mb-3 xs:mb-4">
+                    <div className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-green-500 group-hover:bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-sm xs:text-lg sm:text-xl md:text-2xl flex-shrink-0 transition-colors duration-300">
+                      <span aria-hidden="true">✓</span>
+                    </div>
+                    <h3 
+                      id={`factor-title-${columnIndex}-${index}`}
+                      className="text-lg xs:text-xl sm:text-2xl font-bold text-green-900 group-hover:text-green-800 leading-tight transition-colors duration-300"
+                    >
+                      {factor.title}
+                    </h3>
                   </div>
-                  <h3 className="text-2xl font-bold text-green-900">{factor.title}</h3>
+                  <p className="text-sm xs:text-base sm:text-lg text-green-700 group-hover:text-green-600 leading-relaxed pl-11 xs:pl-14 sm:pl-16 transition-colors duration-300">
+                    {factor.description}
+                  </p>
                 </div>
-                <p className="text-green-700">
-                  {factor.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        ))}
+              ))}
+            </div>
+          ))}
+        </div>
+        
+        {/* Status final responsivo */}
+        <div className="mt-8 xs:mt-10 sm:mt-12 bg-accent text-accent-foreground p-4 xs:p-6 sm:p-8 rounded-lg xs:rounded-xl text-center shadow-lg">
+          <p className="text-lg xs:text-xl sm:text-2xl font-bold leading-tight">
+            {t('slides.csf.status')}
+          </p>
+        </div>
       </div>
-      <div className="mt-12 bg-accent text-accent-foreground p-8 rounded-lg text-center">
-        <p className="text-2xl font-bold">
-          {t('slides.csf.status')}
-        </p>
-      </div>
-    </div>
-    <SlideFooter />
-  </SlideContainer>
+      <SlideFooter />
+    </SlideContainer>
   );
 };
 
@@ -245,63 +259,64 @@ export const Slide27ESG = () => {
   return (
     <SlideContainer className="bg-background">
       <SlideHeader slideNumber={27} totalSlides={29} />
-      <div className="flex-1 px-16 pb-16">
-        <div className="flex items-center gap-4 mb-12">
-          <Leaf className="w-10 h-10 text-accent" />
-          <h2 className="text-5xl font-bold text-primary">{t('slides.esg.title')}</h2>
+      <div className="flex-1 container-responsive pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-16">
+        <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 mb-6 xs:mb-8 sm:mb-10 lg:mb-12">
+          <Leaf className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-accent" />
+          <h2 className="slide-title-responsive text-primary">{t('slides.esg.title')}</h2>
         </div>
-      <div className="grid grid-cols-3 gap-8">
-        <div className="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 p-10 rounded-lg">
-          <div className="text-4xl mb-6">🌍</div>
-          <h3 className="text-3xl font-bold text-green-900 mb-6">{t('slides.esg.environmental.title')}</h3>
-          <ul className="space-y-4">
-            {(t('slides.esg.environmental.items', { returnObjects: true }) as any[]).map((item, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <span className="text-green-600 text-xl">✓</span>
-                <div>
-                  <div className="font-bold text-green-900">{item.title}</div>
-                  <div className="text-sm text-green-700">{item.description}</div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-        
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 p-10 rounded-lg">
-          <div className="text-4xl mb-6">👥</div>
-          <h3 className="text-3xl font-bold text-blue-900 mb-6">{t('slides.esg.social.title')}</h3>
-          <ul className="space-y-4">
-            {(t('slides.esg.social.items', { returnObjects: true }) as any[]).map((item, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <span className="text-blue-600 text-xl">✓</span>
-                <div>
-                  <div className="font-bold text-blue-900">{item.title}</div>
-                  <div className="text-sm text-blue-700">{item.description}</div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-        
-        <div className="bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-200 p-10 rounded-lg">
-          <div className="text-4xl mb-6">⚖️</div>
-          <h3 className="text-3xl font-bold text-purple-900 mb-6">{t('slides.esg.governance.title')}</h3>
-          <ul className="space-y-4">
-            {(t('slides.esg.governance.items', { returnObjects: true }) as any[]).map((item, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <span className="text-purple-600 text-xl">✓</span>
-                <div>
-                  <div className="font-bold text-purple-900">{item.title}</div>
-                  <div className="text-sm text-purple-700">{item.description}</div>
-                </div>
-              </li>
-            ))}
-          </ul>
+
+        <div className="grid grid-responsive-1-2-3 gap-responsive-md">
+          <div className="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 rounded-lg slide-card-responsive overflow-hidden">
+            <div className="text-2xl xs:text-3xl sm:text-4xl mb-4 xs:mb-5 sm:mb-6">🌍</div>
+            <h3 className="text-responsive-xl font-bold text-green-900 mb-4 xs:mb-5 sm:mb-6">{t('slides.esg.environmental.title')}</h3>
+            <ul className="space-y-3 xs:space-y-4">
+              {(t('slides.esg.environmental.items', { returnObjects: true }) as any[]).map((item, index) => (
+                <li key={index} className="flex items-start gap-2 xs:gap-3">
+                  <span className="text-green-600 text-base xs:text-lg">✓</span>
+                  <div>
+                    <div className="font-bold text-green-900 text-sm xs:text-base sm:text-lg">{item.title}</div>
+                    <div className="text-green-700 text-xs xs:text-sm sm:text-base">{item.description}</div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-lg slide-card-responsive overflow-hidden">
+            <div className="text-2xl xs:text-3xl sm:text-4xl mb-4 xs:mb-5 sm:mb-6">👥</div>
+            <h3 className="text-responsive-xl font-bold text-blue-900 mb-4 xs:mb-5 sm:mb-6">{t('slides.esg.social.title')}</h3>
+            <ul className="space-y-3 xs:space-y-4">
+              {(t('slides.esg.social.items', { returnObjects: true }) as any[]).map((item, index) => (
+                <li key={index} className="flex items-start gap-2 xs:gap-3">
+                  <span className="text-blue-600 text-base xs:text-lg">✓</span>
+                  <div>
+                    <div className="font-bold text-blue-900 text-sm xs:text-base sm:text-lg">{item.title}</div>
+                    <div className="text-blue-700 text-xs xs:text-sm sm:text-base">{item.description}</div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-200 rounded-lg slide-card-responsive overflow-hidden">
+            <div className="text-2xl xs:text-3xl sm:text-4xl mb-4 xs:mb-5 sm:mb-6">⚖️</div>
+            <h3 className="text-responsive-xl font-bold text-purple-900 mb-4 xs:mb-5 sm:mb-6">{t('slides.esg.governance.title')}</h3>
+            <ul className="space-y-3 xs:space-y-4">
+              {(t('slides.esg.governance.items', { returnObjects: true }) as any[]).map((item, index) => (
+                <li key={index} className="flex items-start gap-2 xs:gap-3">
+                  <span className="text-purple-600 text-base xs:text-lg">✓</span>
+                  <div>
+                    <div className="font-bold text-purple-900 text-sm xs:text-base sm:text-lg">{item.title}</div>
+                    <div className="text-purple-700 text-xs xs:text-sm sm:text-base">{item.description}</div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <SlideFooter />
-  </SlideContainer>
+      <SlideFooter />
+    </SlideContainer>
   );
 };
 
